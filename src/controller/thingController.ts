@@ -1,5 +1,5 @@
 import { ExposedThing, Servient } from '@node-wot/core';
-import { smartPlug, toggleHandler } from '../thingTypes/smartPlug';
+import { smartPlug } from '../thingTypes/smartPlug';
 import axios from 'axios';
 import { invokeRequest, readRequest } from './matterController';
 
@@ -15,7 +15,6 @@ export const createNewThing = (
 
   smartPlugInst.setActionHandler('toggle', function (value, options) {
     console.log(options);
-    toggleHandler();
     return Promise.resolve('toggled');
   });
 
