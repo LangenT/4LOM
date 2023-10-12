@@ -41,7 +41,3 @@ export const smartPlug: WoT.ExposedThingInit = {
     }
   }
 };
-
-export const toggleHandler = () => {
-  console.log('smart Plug toggled');
-};
