@@ -1,0 +1,26 @@
+{
+  "@context": "https://www.w3.org/2022/wot/td/v1.1",
+  "@type": "tm:ThingModel",
+  "title": "smartplug",
+  "description": "This is a normal on/off smart plug",
+  "version" : {"model": "1.0.0"},
+  "properties": {
+    "status": {
+      "type": "boolean",
+      "description": "Current status value",
+      "observable": true,
+      "readOnly": true
+    }
+  },
+  "actions": {
+    "on": {
+      "synchronous": true
+    },
+    "off": {
+      "synchronous": true
+    },
+    "toggle": {
+      "synchronous": true
+    }
+  }
+}

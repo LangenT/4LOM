@@ -1,0 +1,26 @@
+{
+    "@context": "https://www.w3.org/2022/wot/td/v1.1", 
+    "@type": "tm:ThingModel",
+    "title": "Title of the device",
+    "properties" : {
+        "dim" : {
+            "title": "Dimming level",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+        }
+   },
+   "actions": {
+		"toggle": {
+		     "description": "Turn the lamp on or off"
+		}
+   },
+   "events": {
+   		"overheating": {
+			"description": "Lamp reaches a critical temperature (overheating)",
+			"data": {"type": "string"}
+		}
+   }
+}
+
+

@@ -1,0 +1,28 @@
+{
+  "title": "smartplug",
+  "links" : [{
+    "rel": "tm:extends",
+    "href": "./base_thing.tm.jsonld",
+    "type": "application/tm+json"
+ }],
+  "description": "This is a normal on/off smart plug",
+  "properties": {
+    "status": {
+      "type": "boolean",
+      "description": "Current status value",
+      "observable": true,
+      "readOnly": true
+    }
+  },
+  "actions": {
+    "on": {
+      "synchronous": true
+    },
+    "off": {
+      "synchronous": true
+    },
+    "toggle": {
+      "synchronous": true
+    }
+  }
+}
