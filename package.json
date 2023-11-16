@@ -18,6 +18,8 @@
   "dependencies": {
     "@node-wot/binding-http": "^0.8.8",
     "@node-wot/core": "^0.8.8",
-    "axios": "^1.5.1"
+    "@types/node": "^20.9.0",
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1"
   }
 }

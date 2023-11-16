@@ -1,10 +1,11 @@
 import axios from 'axios';
+import { baseUrl } from '../..';
 
 export const readRequest = (data: string): Promise<WoT.InteractionInput> => {
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://192.168.2.32:9080/read',
+    url: `http://${baseUrl}/read`,
     headers: {
       'Content-Type': 'application/json'
     },
@@ -30,7 +31,7 @@ export const invokeRequest = (data: string): Promise<WoT.InteractionInput> => {
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://192.168.2.32:9080/invoke',
+    url: `http://${baseUrl}/invoke`,
     headers: {
       'Content-Type': 'application/json'
     },

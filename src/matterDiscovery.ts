@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { smartPlug } from './thingTypes/smartPlug';
+import { baseUrl } from '..';
 
 export type discoveredNodeSchema = {
   ETI: WoT.ExposedThingInit, //the Exposed Thing Init
@@ -12,7 +13,7 @@ export const discoverNode = async (): Promise<discoveredNodeSchema[]> => {
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://192.168.2.32:9080/discover-operational-nodes',
+    url: `http://${baseUrl}/discover-operational-nodes`,
     headers: {
       'Content-Type': 'application/json'
     }
@@ -51,7 +52,7 @@ const getThingInit = async (
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://192.168.2.32:9080/describe',
+    url: `http://${baseUrl}/describe`,
     headers: {
       'Content-Type': 'application/json'
     },
