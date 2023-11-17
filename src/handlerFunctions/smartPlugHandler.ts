@@ -3,7 +3,7 @@ import { invokeRequest, readRequest } from "../controller/matterController";
 export const setSmartPlugHandler = (smartPlug: WoT.ExposedThing) => {
     smartPlug.setPropertyReadHandler('nodeid', function () {
       return new Promise((resolve, reject) => {
-        resolve(smartPlug.getThingDescription().title);
+        resolve(smartPlug.getThingDescription().title.split("-")?.[0]);
       });
     });
   
