@@ -78,12 +78,15 @@ const getThingInit = async (
   let i = 1;
   while (true) {
     if (
-      nodeDescription['0'][i.toString()]['Descriptor::DeviceTypeListA'][0]['deviceType']
+      nodeDescription?.['0']?.[i.toString()]?.['Descriptor::DeviceTypeListA']?.[0]?.['deviceType']
     ) {
       const endpointSchema = getDeviceType(
         nodeDescription['0'][i.toString()]['Descriptor::DeviceTypeListA'][0]['deviceType']
       );
       if (endpointSchema) {
+        console.log(endpointSchema.ETI.title);
+        endpointSchema.ETI.title = nodeId.toString() + "-" + endpointSchema.deviceType.toString();
+        console.log("found a new device: " + endpointSchema.ETI.title);
         endpointSchemaArray.push(endpointSchema);
       }
     } else {
@@ -98,11 +101,9 @@ const getThingInit = async (
 //get the ExposedThingInit to a given device type number (dec)
 const getDeviceType = (deviceType: number): discoveredEndpointSchema | null => {
   switch (deviceType) {
-      case 266: //type smartPlug
-        let inst = smartPlug;
-      inst.title = deviceType.toString() + "-" + "266";
-      console.log("found a new device: " + inst.title);
-      return { ETI: smartPlug, deviceType: 266 };
+    case 266: //type smartPlug
+      const inst: WoT.ExposedThingInit = {...smartPlug};
+      return { ETI: inst, deviceType: 266 };
       default:
         console.log("unknown or not supported device type: " + deviceType);
         return null;
