@@ -1,475 +1,475 @@
-//handler for cluster 0x0008 -> Level Control
+//handler for cluster 0x0300 -> Color Control
 import { invokeRequest, readRequest } from '../controller/matterController';
 
-export const set0x0008Handler = (
-  smartPlug: WoT.ExposedThing,
+export const set0x0300Handler = (
+  exposedThing: WoT.ExposedThing,
   endpoint: number
 ) => {
   //
   //read handler
   //
-  smartPlug.setPropertyReadHandler('CurrentHue', function () {
+  exposedThing.setPropertyReadHandler('CurrentHue', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::CurrentHueA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('CurrentSaturation', function () {
+  exposedThing.setPropertyReadHandler('CurrentSaturation', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::CurrentSaturationA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('RemainingTime', function () {
+  exposedThing.setPropertyReadHandler('RemainingTime', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::RemainingTimeA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('CurrentX', function () {
+  exposedThing.setPropertyReadHandler('CurrentX', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::CurrentXA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('CurrentY', function () {
+  exposedThing.setPropertyReadHandler('CurrentY', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::CurrentYA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('DriftCompensation', function () {
+  exposedThing.setPropertyReadHandler('DriftCompensation', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::DriftCompensationA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('CompensationText', function () {
+  exposedThing.setPropertyReadHandler('CompensationText', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::CompensationTextA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('ColorTemperatureMireds', function () {
+  exposedThing.setPropertyReadHandler('ColorTemperatureMireds', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorTemperatureMiredsA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('ColorMode', function () {
+  exposedThing.setPropertyReadHandler('ColorMode', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorModeA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('Options', function () {
+  exposedThing.setPropertyReadHandler('Options', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::OptionsA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('EnhancedCurrentHue', function () {
+  exposedThing.setPropertyReadHandler('EnhancedCurrentHue', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::EnhancedCurrentHueA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('EnhancedColorMode', function () {
+  exposedThing.setPropertyReadHandler('EnhancedColorMode', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::EnhancedColorModeA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('ColorLoopActive', function () {
+  exposedThing.setPropertyReadHandler('ColorLoopActive', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorLoopActiveA'
     });
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('ColorLoopDirection', function () {
+  exposedThing.setPropertyReadHandler('ColorLoopDirection', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorLoopDirectionA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorLoopTime', function () {
+  exposedThing.setPropertyReadHandler('ColorLoopTime', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorLoopTimeA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorLoopStartEnhancedHue', function () {
+  exposedThing.setPropertyReadHandler('ColorLoopStartEnhancedHue', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorLoopStartEnhancedHueA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorLoopStoredEnhancedHue', function () {
+  exposedThing.setPropertyReadHandler('ColorLoopStoredEnhancedHue', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorLoopStoredEnhancedHueA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorCapabilities', function () {
+  exposedThing.setPropertyReadHandler('ColorCapabilities', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorCapabilitiesA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorTempPhysicalMinMireds', function () {
+  exposedThing.setPropertyReadHandler('ColorTempPhysicalMinMireds', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorTempPhysicalMinMiredsA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorTempPhysicalMaxMireds', function () {
+  exposedThing.setPropertyReadHandler('ColorTempPhysicalMaxMireds', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorTempPhysicalMaxMiredsA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('CoupleColorTempToLevelMinMireds', function () {
+  exposedThing.setPropertyReadHandler('CoupleColorTempToLevelMinMireds', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::CoupleColorTempToLevelMinMiredsA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('StartUpColorTemperatureMireds', function () {
+  exposedThing.setPropertyReadHandler('StartUpColorTemperatureMireds', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::StartUpColorTemperatureMiredsA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('NumberOfPrimaries', function () {
+  exposedThing.setPropertyReadHandler('NumberOfPrimaries', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::NumberOfPrimariesA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary1X', function () {
+  exposedThing.setPropertyReadHandler('Primary1X', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary1XA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary1Y', function () {
+  exposedThing.setPropertyReadHandler('Primary1Y', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary1YA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary1Intensity', function () {
+  exposedThing.setPropertyReadHandler('Primary1Intensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary1IntensityA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary2X', function () {
+  exposedThing.setPropertyReadHandler('Primary2X', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary2XA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary2Y', function () {
+  exposedThing.setPropertyReadHandler('Primary2Y', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary2YA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary2Intensity', function () {
+  exposedThing.setPropertyReadHandler('Primary2Intensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary2IntensityA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary3X', function () {
+  exposedThing.setPropertyReadHandler('Primary3X', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary3XA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary3Y', function () {
+  exposedThing.setPropertyReadHandler('Primary3Y', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary3YA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary3Intensity', function () {
+  exposedThing.setPropertyReadHandler('Primary3Intensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary3IntensityA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary4X', function () {
+  exposedThing.setPropertyReadHandler('Primary4X', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary4XA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary4Y', function () {
+  exposedThing.setPropertyReadHandler('Primary4Y', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary4YA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary4Intensity', function () {
+  exposedThing.setPropertyReadHandler('Primary4Intensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary4IntensityA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary5X', function () {
+  exposedThing.setPropertyReadHandler('Primary5X', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary5XA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary5Y', function () {
+  exposedThing.setPropertyReadHandler('Primary5Y', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary5YA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary5Intensity', function () {
+  exposedThing.setPropertyReadHandler('Primary5Intensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary5IntensityA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary6X', function () {
+  exposedThing.setPropertyReadHandler('Primary6X', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary6XA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary6Y', function () {
+  exposedThing.setPropertyReadHandler('Primary6Y', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary6YA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('Primary6Intensity', function () {
+  exposedThing.setPropertyReadHandler('Primary6Intensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::Primary6IntensityA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('WhitePointX', function () {
+  exposedThing.setPropertyReadHandler('WhitePointX', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::WhitePointXA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('WhitePointY', function () {
+  exposedThing.setPropertyReadHandler('WhitePointY', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::WhitePointYA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointRX', function () {
+  exposedThing.setPropertyReadHandler('ColorPointRX', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointRXA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointRY', function () {
+  exposedThing.setPropertyReadHandler('ColorPointRY', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointRYA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointRIntensity', function () {
+  exposedThing.setPropertyReadHandler('ColorPointRIntensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointRIntensityA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointGX', function () {
+  exposedThing.setPropertyReadHandler('ColorPointGX', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointGXA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointGY', function () {
+  exposedThing.setPropertyReadHandler('ColorPointGY', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointGYA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointGIntensity', function () {
+  exposedThing.setPropertyReadHandler('ColorPointGIntensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointGIntensityA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointBX', function () {
+  exposedThing.setPropertyReadHandler('ColorPointBX', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointBXA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointBY', function () {
+  exposedThing.setPropertyReadHandler('ColorPointBY', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointBYA'
     });
     return readRequest(data);
   });
     
-  smartPlug.setPropertyReadHandler('ColorPointBIntensity', function () {
+  exposedThing.setPropertyReadHandler('ColorPointBIntensity', function () {
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       attributeType: 'ColorControl::ColorPointBIntensityA'
     });
@@ -479,7 +479,7 @@ export const set0x0008Handler = (
   //
   //action handler
   //
-  smartPlug.setActionHandler('MoveToHue', async function (value, options) {
+  exposedThing.setActionHandler('MoveToHue', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -497,7 +497,7 @@ export const set0x0008Handler = (
     }
 
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       commandType: 'ColorControl::MoveToHue',
       payload: {
@@ -512,7 +512,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('MoveHue', async function (value, options) {
+  exposedThing.setActionHandler('MoveHue', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -529,7 +529,7 @@ export const set0x0008Handler = (
     }
 
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       commandType: 'ColorControl::MoveHue',
       payload: {
@@ -543,7 +543,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('StepHue', async function (value, options) {
+  exposedThing.setActionHandler('StepHue', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -555,7 +555,7 @@ export const set0x0008Handler = (
     }
 
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       commandType: 'ColorControl::StepHue',
         payload: {
@@ -570,7 +570,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'MoveToSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -589,7 +589,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::MoveToSaturation',
         payload: {
@@ -604,7 +604,7 @@ export const set0x0008Handler = (
     }
   );
 
-  smartPlug.setActionHandler('MoveSaturation', async function (value, options) {
+  exposedThing.setActionHandler('MoveSaturation', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -621,7 +621,7 @@ export const set0x0008Handler = (
     }
 
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       commandType: 'ColorControl::MoveSaturation',
       payload: {
@@ -635,7 +635,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('StepSaturation', async function (value, options) {
+  exposedThing.setActionHandler('StepSaturation', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -653,7 +653,7 @@ export const set0x0008Handler = (
     }
 
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       commandType: 'ColorControl::StepSaturation',
       payload: {
@@ -668,7 +668,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'MoveToHueAndSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -688,7 +688,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::MoveToHueAndSaturation',
           payload: {
@@ -704,7 +704,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'MoveToColor',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -724,7 +724,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::MoveToColor',
           payload: {
@@ -740,7 +740,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'MoveColor',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -759,7 +759,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::MoveColor',
           payload: {
@@ -774,7 +774,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'StepColor',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -794,7 +794,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::StepColor',
           payload: {
@@ -810,7 +810,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'MoveToColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -829,7 +829,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::MoveToColorTemperature',
           payload: {
@@ -844,7 +844,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'EnhancedMoveToHue',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -864,7 +864,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::EnhancedMoveToHue',
           payload: {
@@ -880,7 +880,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'EnhancedMoveHue',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -899,7 +899,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::EnhancedMoveHue',
           payload: {
@@ -914,7 +914,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler('EnhancedStepHue', async function (value, options) {
+  exposedThing.setActionHandler('EnhancedStepHue', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -926,7 +926,7 @@ export const set0x0008Handler = (
     }
 
     let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+      nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       commandType: 'ColorControl::EnhancedStepHue',
         payload: {
@@ -941,7 +941,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'EnhancedMoveToHueAndSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -961,7 +961,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::EnhancedMoveToHueAndSaturation',
           payload: {
@@ -977,7 +977,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'ColorLoopSet',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -999,7 +999,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::ColorLoopSet',
           payload: {
@@ -1017,7 +1017,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'StopMoveStep',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -1034,7 +1034,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::StopMoveStep',
           payload: {
@@ -1047,7 +1047,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'MoveColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -1068,7 +1068,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::MoveColorTemperature',
           payload: {
@@ -1085,7 +1085,7 @@ export const set0x0008Handler = (
     }
   );
     
-  smartPlug.setActionHandler(
+  exposedThing.setActionHandler(
     'StepColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
@@ -1107,7 +1107,7 @@ export const set0x0008Handler = (
       }
 
       let data = JSON.stringify({
-        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'ColorControl::StepColorTemperature',
           payload: {
