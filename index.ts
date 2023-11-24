@@ -8,7 +8,7 @@ dotenv.config();
 const qiviconIp = process.env.QIVICON_IP;
 const qiviconPort = process.env.QIVICON_PORT;
 
-export const baseUrl: string = qiviconIp + ":" + qiviconPort;
+export const baseUrl: string = qiviconIp + ':' + qiviconPort;
 
 const servient = new Servient(); //create new servient
 servient.addServer(
@@ -17,16 +17,14 @@ servient.addServer(
   })
 ); //use a HTTP server
 
-//TODO: read Node and types
-
 servient.start().then(async (WoT) => {
   //discover the devices
   const thingList = await discoverNode();
 
   thingList.forEach((thingInit) => {
-    //produce every device and 
+    //produce every device and
     WoT.produce(thingInit.ETI).then((thing) => {
-      setDeviceHandler(thing, thingInit.deviceType);
+      setDeviceHandler(thing, thingInit.deviceType, thingInit.endpoint);
       thing.expose().then(() => {
         console.info(thing.getThingDescription().title + ' ready');
       });
