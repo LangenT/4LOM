@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { smartPlug } from './thingTypes/smartPlug';
 import { baseUrl } from '..';
+import { extendedColorLight } from './thingTypes/extendedColorLight';
 
 export type discoveredEndpointSchema = {
-  ETI: WoT.ExposedThingInit, //the Exposed Thing Init
-  deviceType: number //the device type of the Exposed Thing
-}
+  ETI: WoT.ExposedThingInit; //the Exposed Thing Init
+  deviceType: number; //the device type of the Exposed Thing
+  endpoint: number;
+};
 
 export const discoverNode = async (): Promise<discoveredEndpointSchema[]> => {
   let things: discoveredEndpointSchema[] = [];
@@ -33,15 +35,16 @@ export const discoverNode = async (): Promise<discoveredEndpointSchema[]> => {
   //go through every node
   for (const nodeId of nodeIds) {
     await getThingInit(nodeId).then((endpointSchemaArray) => {
-      endpointSchemaArray?.forEach(endpointSchema => {//go through every endpoint
+      endpointSchemaArray?.forEach((endpointSchema) => {
+        //go through every endpoint
         if (endpointSchema) {
-          things.push(endpointSchema);//add every endpoint to the things
-    }
+          things.push(endpointSchema); //add every endpoint to the things
+        }
       });
     });
   }
 
-  console.log('End discovery, found ' + things.length + " items");
+  console.log('End discovery, found ' + things.length + ' items');
   return things;
 };
 
@@ -69,24 +72,29 @@ const getThingInit = async (
       return [];
     });
 
-  //currently the thing can only implement one device type!
-  //TODO handle more than one device type from one node
-
   const endpointSchemaArray: discoveredEndpointSchema[] = [];
 
   //iterate trough every endpoint
   let i = 1;
   while (true) {
     if (
-      nodeDescription?.['0']?.[i.toString()]?.['Descriptor::DeviceTypeListA']?.[0]?.['deviceType']
+      nodeDescription?.['0']?.[i.toString()]?.[
+        'Descriptor::DeviceTypeListA'
+      ]?.[0]?.['deviceType']
     ) {
       const endpointSchema = getDeviceType(
-        nodeDescription['0'][i.toString()]['Descriptor::DeviceTypeListA'][0]['deviceType']
+        nodeDescription['0'][i.toString()]['Descriptor::DeviceTypeListA'][0][
+          'deviceType'
+        ]
       );
       if (endpointSchema) {
         console.log(endpointSchema.ETI.title);
-        endpointSchema.ETI.title = nodeId.toString() + "-" + endpointSchema.deviceType.toString();
-        console.log("found a new device: " + endpointSchema.ETI.title);
+        endpointSchema.ETI.title =
+          nodeId.toString() + '-' + endpointSchema.deviceType.toString();
+        endpointSchema.endpoint = i;
+        console.log(
+          'found a new device: ' + endpointSchema.ETI.title + ' endpoint: ' + i
+        );
         endpointSchemaArray.push(endpointSchema);
       }
     } else {
@@ -102,10 +110,13 @@ const getThingInit = async (
 const getDeviceType = (deviceType: number): discoveredEndpointSchema | null => {
   switch (deviceType) {
     case 266: //type smartPlug
-      const inst: WoT.ExposedThingInit = {...smartPlug};
-      return { ETI: inst, deviceType: 266 };
-      default:
-        console.log("unknown or not supported device type: " + deviceType);
-        return null;
+      const spInst: WoT.ExposedThingInit = { ...smartPlug };
+      return { ETI: spInst, deviceType: 266, endpoint: -1 };
+    case 269: //type extended color light
+      const eclInst: WoT.ExposedThingInit = { ...extendedColorLight };
+      return { ETI: eclInst, deviceType: 269, endpoint: -1 };
+    default:
+      console.log('unknown or not supported device type: ' + deviceType);
+      return null;
   }
 };
