@@ -16,7 +16,7 @@ export const readRequest = (data: string): Promise<WoT.InteractionInput> => {
     axios
       .request(config)
       .then((response) => {
-        resolve(response.data.response['OnOff::OnOffA']);
+        resolve(response.data.response);
       })
       .catch((error) => {
         console.log(error);
