@@ -17,7 +17,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('CurrentLevel', function () {
+  smartPlug.setPropertyReadHandler('RemainingTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -198,7 +198,7 @@ export const set0x0008Handler = (
 
     return invokeRequest(data);
   });
-    
+
   smartPlug.setActionHandler('Step', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
@@ -206,8 +206,8 @@ export const set0x0008Handler = (
     }
 
     const reqData = JSON.parse((await value.value())?.toString() || '');
-      if (
-        !reqData?.StepMode &&  
+    if (
+      !reqData?.StepMode &&
       !reqData?.StepSize &&
       !reqData?.TransitionTime &&
       !reqData?.OptionsMask &&
@@ -220,8 +220,8 @@ export const set0x0008Handler = (
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       commandType: 'LevelControl::Step',
-        payload: {
-          StepMode: reqData?.StepMode,
+      payload: {
+        StepMode: reqData?.StepMode,
         StepSize: reqData?.StepMode,
         TransitionTime: reqData?.TransitionTime,
         OptionsMask: reqData?.OptionsMask,
@@ -231,7 +231,7 @@ export const set0x0008Handler = (
 
     return invokeRequest(data);
   });
-    
+
   smartPlug.setActionHandler('Stop', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
@@ -239,10 +239,7 @@ export const set0x0008Handler = (
     }
 
     const reqData = JSON.parse((await value.value())?.toString() || '');
-      if (
-      !reqData?.OptionsMask &&
-      !reqData?.OptionsOverride
-    ) {
+    if (!reqData?.OptionsMask && !reqData?.OptionsOverride) {
       return 'Invalid argument';
     }
 
@@ -258,38 +255,41 @@ export const set0x0008Handler = (
 
     return invokeRequest(data);
   });
-    
-  smartPlug.setActionHandler('MoveToLevelWithOnOff', async function (value, options) {
-    const parsedValue = await value.value();
-    if (typeof parsedValue !== 'string') {
-      return 'Invalid content type';
-    }
 
-    const reqData = JSON.parse((await value.value())?.toString() || '');
-    if (
-      !reqData?.Level &&
-      !reqData?.TransitionTime &&
-      !reqData?.OptionsMask &&
-      !reqData?.OptionsOverride
-    ) {
-      return 'Invalid argument';
-    }
-
-    let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
-      endpointId: endpoint,
-      commandType: 'LevelControl::MoveToLevelWithOnOff',
-      payload: {
-        Level: reqData?.Level,
-        TransitionTime: reqData?.TransitionTime,
-        OptionsMask: reqData?.OptionsMask,
-        OptionsOverride: reqData?.OptionsOverride
+  smartPlug.setActionHandler(
+    'MoveToLevelWithOnOff',
+    async function (value, options) {
+      const parsedValue = await value.value();
+      if (typeof parsedValue !== 'string') {
+        return 'Invalid content type';
       }
-    });
 
-    return invokeRequest(data);
-  });
-    
+      const reqData = JSON.parse((await value.value())?.toString() || '');
+      if (
+        !reqData?.Level &&
+        !reqData?.TransitionTime &&
+        !reqData?.OptionsMask &&
+        !reqData?.OptionsOverride
+      ) {
+        return 'Invalid argument';
+      }
+
+      let data = JSON.stringify({
+        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        endpointId: endpoint,
+        commandType: 'LevelControl::MoveToLevelWithOnOff',
+        payload: {
+          Level: reqData?.Level,
+          TransitionTime: reqData?.TransitionTime,
+          OptionsMask: reqData?.OptionsMask,
+          OptionsOverride: reqData?.OptionsOverride
+        }
+      });
+
+      return invokeRequest(data);
+    }
+  );
+
   smartPlug.setActionHandler('MoveWithOnOff', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
@@ -320,7 +320,7 @@ export const set0x0008Handler = (
 
     return invokeRequest(data);
   });
-    
+
   smartPlug.setActionHandler('StepWithOnOff', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
@@ -328,8 +328,8 @@ export const set0x0008Handler = (
     }
 
     const reqData = JSON.parse((await value.value())?.toString() || '');
-      if (
-        !reqData?.StepMode &&  
+    if (
+      !reqData?.StepMode &&
       !reqData?.StepSize &&
       !reqData?.TransitionTime &&
       !reqData?.OptionsMask &&
@@ -342,8 +342,8 @@ export const set0x0008Handler = (
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
       commandType: 'LevelControl::StepWithOnOff',
-        payload: {
-          StepMode: reqData?.StepMode,
+      payload: {
+        StepMode: reqData?.StepMode,
         StepSize: reqData?.StepMode,
         TransitionTime: reqData?.TransitionTime,
         OptionsMask: reqData?.OptionsMask,
