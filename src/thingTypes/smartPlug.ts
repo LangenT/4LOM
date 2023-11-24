@@ -3,16 +3,6 @@ export const smartPlug: WoT.ExposedThingInit = {
   title: 'smartplug',
   description: 'This is a normal on/off smart plug',
   properties: {
-    resources: {
-      readOnly: true,
-      observable: true,
-      type: 'object',
-      properties: {
-        status: {
-          type: 'boolean'
-        }
-      }
-    },
     status: {
       //cluster
       type: 'boolean',
