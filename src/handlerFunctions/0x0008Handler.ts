@@ -8,7 +8,7 @@ export const set0x0008Handler = (
   //
   //read handler
   //
-  smartPlug.setPropertyReadHandler('CurrentLevel', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:CurrentLevel', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -17,7 +17,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('RemainingTime', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:RemainingTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -26,7 +26,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('MinLevel', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:MinLevel', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -35,7 +35,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('MaxLevel', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:MaxLevel', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -44,7 +44,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('CurrentFrequency', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:CurrentFrequency', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -53,7 +53,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('MinFrequency', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:MinFrequency', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -62,7 +62,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('MaxFrequency', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:MaxFrequency', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -71,7 +71,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('OnOffTransitionTime', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:OnOffTransitionTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -80,7 +80,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('OnLevel', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:OnLevel', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -89,7 +89,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('OnTransitionTime', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:OnTransitionTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -98,7 +98,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('OffTransitionTime', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:OffTransitionTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -107,7 +107,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('DefaultMoveRate', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:DefaultMoveRate', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -116,7 +116,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('Options', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:Options', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -125,7 +125,7 @@ export const set0x0008Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('StartUpCurrentLevel', function () {
+  smartPlug.setPropertyReadHandler('LevelControl:StartUpCurrentLevel', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -137,7 +137,7 @@ export const set0x0008Handler = (
   //
   //action handler
   //
-  smartPlug.setActionHandler('MoveToLevel', async function (value, options) {
+  smartPlug.setActionHandler('LevelControl:MoveToLevel', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -168,7 +168,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('Move', async function (value, options) {
+  smartPlug.setActionHandler('LevelControl:Move', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -199,7 +199,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('Step', async function (value, options) {
+  smartPlug.setActionHandler('LevelControl:Step', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -232,7 +232,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('Stop', async function (value, options) {
+  smartPlug.setActionHandler('LevelControl:Stop', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -257,7 +257,7 @@ export const set0x0008Handler = (
   });
 
   smartPlug.setActionHandler(
-    'MoveToLevelWithOnOff',
+    'LevelControl:MoveToLevelWithOnOff',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -290,7 +290,7 @@ export const set0x0008Handler = (
     }
   );
 
-  smartPlug.setActionHandler('MoveWithOnOff', async function (value, options) {
+  smartPlug.setActionHandler('LevelControl:MoveWithOnOff', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -321,7 +321,7 @@ export const set0x0008Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('StepWithOnOff', async function (value, options) {
+  smartPlug.setActionHandler('LevelControl:StepWithOnOff', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
