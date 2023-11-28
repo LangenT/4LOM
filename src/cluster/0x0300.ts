@@ -14,8 +14,8 @@ export const properties0x0006 = {
   'ColorControl:CurrentSaturation': {
     //HS
     type: 'number',
-    observable: 0,
-    readOnly: 254,
+    observable: true,
+    readOnly: true,
     minimum: 0,
     maximum: 254
   },
