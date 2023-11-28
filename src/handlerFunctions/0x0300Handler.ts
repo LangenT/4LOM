@@ -8,7 +8,7 @@ export const set0x0300Handler = (
   //
   //read handler
   //
-  exposedThing.setPropertyReadHandler('CurrentHue', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:CurrentHue', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -17,7 +17,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('CurrentSaturation', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:CurrentSaturation', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -26,7 +26,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('RemainingTime', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:RemainingTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -35,7 +35,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('CurrentX', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:CurrentX', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -44,7 +44,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('CurrentY', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:CurrentY', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -53,7 +53,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('DriftCompensation', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:DriftCompensation', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -62,7 +62,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('CompensationText', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:CompensationText', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -71,7 +71,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('ColorTemperatureMireds', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorTemperatureMireds', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -80,7 +80,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('ColorMode', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorMode', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -89,7 +89,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('Options', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Options', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -98,7 +98,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('EnhancedCurrentHue', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:EnhancedCurrentHue', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -107,7 +107,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('EnhancedColorMode', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:EnhancedColorMode', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -116,7 +116,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('ColorLoopActive', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorLoopActive', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -125,7 +125,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
 
-  exposedThing.setPropertyReadHandler('ColorLoopDirection', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorLoopDirection', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -134,7 +134,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorLoopTime', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorLoopTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -143,7 +143,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorLoopStartEnhancedHue', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorLoopStartEnhancedHue', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -152,7 +152,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorLoopStoredEnhancedHue', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorLoopStoredEnhancedHue', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -161,7 +161,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorCapabilities', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorCapabilities', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -170,7 +170,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorTempPhysicalMinMireds', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorTempPhysicalMinMireds', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -179,7 +179,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorTempPhysicalMaxMireds', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorTempPhysicalMaxMireds', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -188,7 +188,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('CoupleColorTempToLevelMinMireds', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:CoupleColorTempToLevelMinMireds', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -197,7 +197,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('StartUpColorTemperatureMireds', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:StartUpColorTemperatureMireds', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -206,7 +206,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('NumberOfPrimaries', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:NumberOfPrimaries', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -215,7 +215,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary1X', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary1X', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -224,7 +224,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary1Y', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary1Y', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -233,7 +233,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary1Intensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary1Intensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -242,7 +242,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary2X', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary2X', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -251,7 +251,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary2Y', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary2Y', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -260,7 +260,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary2Intensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary2Intensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -269,7 +269,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary3X', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary3X', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -278,7 +278,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary3Y', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary3Y', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -287,7 +287,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary3Intensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary3Intensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -296,7 +296,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary4X', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary4X', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -305,7 +305,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary4Y', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary4Y', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -314,7 +314,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary4Intensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary4Intensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -323,7 +323,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary5X', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary5X', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -332,7 +332,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary5Y', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary5Y', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -341,7 +341,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary5Intensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary5Intensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -350,7 +350,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary6X', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary6X', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -359,7 +359,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary6Y', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary6Y', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -368,7 +368,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('Primary6Intensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:Primary6Intensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -377,7 +377,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('WhitePointX', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:WhitePointX', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -386,7 +386,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('WhitePointY', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:WhitePointY', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -395,7 +395,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointRX', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointRX', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -404,7 +404,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointRY', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointRY', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -413,7 +413,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointRIntensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointRIntensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -422,7 +422,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointGX', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointGX', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -431,7 +431,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointGY', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointGY', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -440,7 +440,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointGIntensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointGIntensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -449,7 +449,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointBX', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointBX', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -458,7 +458,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointBY', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointBY', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -467,7 +467,7 @@ export const set0x0300Handler = (
     return readRequest(data);
   });
     
-  exposedThing.setPropertyReadHandler('ColorPointBIntensity', function () {
+  exposedThing.setPropertyReadHandler('ColorControl:ColorPointBIntensity', function () {
     let data = JSON.stringify({
       nodeId: parseInt(exposedThing.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -479,7 +479,7 @@ export const set0x0300Handler = (
   //
   //action handler
   //
-  exposedThing.setActionHandler('MoveToHue', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:MoveToHue', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -512,7 +512,7 @@ export const set0x0300Handler = (
     return invokeRequest(data);
   });
 
-  exposedThing.setActionHandler('MoveHue', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:MoveHue', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -543,7 +543,7 @@ export const set0x0300Handler = (
     return invokeRequest(data);
   });
 
-  exposedThing.setActionHandler('StepHue', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:StepHue', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -604,7 +604,7 @@ export const set0x0300Handler = (
     }
   );
 
-  exposedThing.setActionHandler('MoveSaturation', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:MoveSaturation', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -635,7 +635,7 @@ export const set0x0300Handler = (
     return invokeRequest(data);
   });
 
-  exposedThing.setActionHandler('StepSaturation', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:StepSaturation', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -914,7 +914,7 @@ export const set0x0300Handler = (
     }
   );
     
-  exposedThing.setActionHandler('EnhancedStepHue', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:EnhancedStepHue', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
