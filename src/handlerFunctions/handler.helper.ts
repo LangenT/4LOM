@@ -11,7 +11,9 @@ export const setDeviceHandler = (
 ) => {
   switch (deviceType) {
     case 266:
-      setSmartPlugHandler(thing);
+      //setSmartPlugHandler(thing);
+      set0x0006Handler(thing, endpoint);
+      set0x0008Handler(thing, endpoint);
       break;
     case 269:
       set0x0006Handler(thing, endpoint);
