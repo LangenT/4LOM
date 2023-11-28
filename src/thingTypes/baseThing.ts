@@ -1,5 +1,1 @@
-
-type baseThing = {
-
-
-};
+type baseThing = {};

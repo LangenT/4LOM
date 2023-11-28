@@ -43,8 +43,6 @@ export const smartPlug: WoT.ExposedThingInit = {
       readOnly: true
     },
 
-
-
     'LevelControl:CurrentLevel': {
       type: 'number',
       description: 'CurrentLevel as described in Matter spec 1.2',
@@ -178,8 +176,6 @@ export const smartPlug: WoT.ExposedThingInit = {
       //LT
       synchronous: true
     },
-
-
 
     'LevelControl:MoveToLevel': {
       synchronous: true

@@ -86,29 +86,32 @@ export const set0x0006Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('OnOff:OffWithEffect', async function (value, options) {
-    const parsedValue = await value.value();
-    if (typeof parsedValue !== 'string') {
-      return 'Invalid content type';
-    }
-
-    const reqData = JSON.parse((await value.value())?.toString() || '');
-    if (!reqData?.effectIdentifier && !reqData?.effectVariant) {
-      return 'Invalid argument';
-    }
-
-    let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
-      endpointId: endpoint,
-      commandType: 'OnOff::OffWithEffect',
-      payload: {
-        effectIdentifier: reqData?.effectIdentifier,
-        effectVariant: reqData?.effectVariant
+  smartPlug.setActionHandler(
+    'OnOff:OffWithEffect',
+    async function (value, options) {
+      const parsedValue = await value.value();
+      if (typeof parsedValue !== 'string') {
+        return 'Invalid content type';
       }
-    });
 
-    return invokeRequest(data);
-  });
+      const reqData = JSON.parse((await value.value())?.toString() || '');
+      if (!reqData?.effectIdentifier && !reqData?.effectVariant) {
+        return 'Invalid argument';
+      }
+
+      let data = JSON.stringify({
+        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        endpointId: endpoint,
+        commandType: 'OnOff::OffWithEffect',
+        payload: {
+          effectIdentifier: reqData?.effectIdentifier,
+          effectVariant: reqData?.effectVariant
+        }
+      });
+
+      return invokeRequest(data);
+    }
+  );
 
   smartPlug.setActionHandler(
     'OnOff:OnWithRecallGlobalScene',
@@ -123,28 +126,31 @@ export const set0x0006Handler = (
     }
   );
 
-  smartPlug.setActionHandler('OnOff:OnWithTimedOff', async function (value, options) {
-    const parsedValue = await value.value();
-    if (typeof parsedValue !== 'string') {
-      return 'Invalid content type';
-    }
-
-    const reqData = JSON.parse((await value.value())?.toString() || '');
-    if (!reqData?.onOffControl && !reqData?.onTime && !reqData?.offWaitTime) {
-      return 'Invalid argument';
-    }
-
-    let data = JSON.stringify({
-      nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
-      endpointId: endpoint,
-      commandType: 'OnOff::OnWithTimedOff',
-      payload: {
-        onOffControl: reqData?.onOffControl,
-        onTime: reqData?.onTime,
-        offWaitTime: reqData?.offWaitTime
+  smartPlug.setActionHandler(
+    'OnOff:OnWithTimedOff',
+    async function (value, options) {
+      const parsedValue = await value.value();
+      if (typeof parsedValue !== 'string') {
+        return 'Invalid content type';
       }
-    });
 
-    return invokeRequest(data);
-  });
+      const reqData = JSON.parse((await value.value())?.toString() || '');
+      if (!reqData?.onOffControl && !reqData?.onTime && !reqData?.offWaitTime) {
+        return 'Invalid argument';
+      }
+
+      let data = JSON.stringify({
+        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        endpointId: endpoint,
+        commandType: 'OnOff::OnWithTimedOff',
+        payload: {
+          onOffControl: reqData?.onOffControl,
+          onTime: reqData?.onTime,
+          offWaitTime: reqData?.offWaitTime
+        }
+      });
+
+      return invokeRequest(data);
+    }
+  );
 };
