@@ -9,44 +9,51 @@ export const extendedColorLight: WoT.ExposedThingInit = {
   title: 'extendedColorLight',
   description: '',
   properties: {
-    //from 0x0006 On/Off cluster
-    OnOff: {
-      type: 'boolean',
-      description: 'Status if the device is turned on or not',
-      observable: true,
-      readOnly: true
-    },
-    GlobalSceneControl: {
-      //LT
-      type: 'boolean',
-      description: 'GlobalSceneControl as described in Matter spec 1.2',
-      observable: true,
-      readOnly: true
-    },
-    OnTime: {
-      //LT
-      type: 'number',
-      description: 'OnTime as described in Matter spec 1.2',
-      observable: true,
-      readOnly: true
-    },
-    OffWaitTime: {
-      //LT
-      type: 'number',
-      description: 'OffWaitTime as described in Matter spec 1.2',
-      observable: true,
-      readOnly: true
-    },
-    StartUpOnOff: {
-      //LT
-      type: 'number', //enum StartUpOnOffEnum -> 0, 1, 2 are defined
-      description: 'StartUpOnOff as described in Matter spec 1.2',
-      observable: true,
-      readOnly: true
-    },
+    /*
 
-    //from 0x0008 Level Control Cluster
-    CurrentLevel: {
+      0x0003 -> On/Off
+
+    */
+      'OnOff:OnOff': {
+        type: 'boolean',
+        description: 'Status if the device is turned on or not',
+        observable: true,
+        readOnly: true
+      },
+      'OnOff:GlobalSceneControl': {
+        //LT
+        type: 'boolean',
+        description: 'GlobalSceneControl as described in Matter spec 1.2',
+        observable: true,
+        readOnly: true
+      },
+      'OnOff:OnTime': {
+        //LT
+        type: 'number',
+        description: 'OnTime as described in Matter spec 1.2',
+        observable: true,
+        readOnly: true
+      },
+      'OnOff:OffWaitTime': {
+        //LT
+        type: 'number',
+        description: 'OffWaitTime as described in Matter spec 1.2',
+        observable: true,
+        readOnly: true
+      },
+      'OnOff:StartUpOnOff': {
+        //LT
+        type: 'number', //enum StartUpOnOffEnum -> 0, 1, 2 are defined
+        description: 'StartUpOnOff as described in Matter spec 1.2',
+        observable: true,
+        readOnly: true
+      },
+    /*
+
+      0x0008 -> Level Control
+
+    */
+    'LevelControl:CurrentLevel': {
       type: 'number',
       description: 'CurrentLevel as described in Matter spec 1.2',
       observable: true,
@@ -54,14 +61,14 @@ export const extendedColorLight: WoT.ExposedThingInit = {
       minimum: min,
       maximum: max
     },
-    RemainingTime: {
+    'LevelControl:RemainingTime': {
       //LT
       type: 'number',
       description: 'RemainingTime as described in Matter spec 1.2',
       observable: true,
       readOnly: true
     },
-    MinLevel: {
+    'LevelControl:MinLevel': {
       //LT
       type: 'number',
       description: 'MinLevel as described in Matter spec 1.2',
@@ -70,7 +77,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
       minimum: min,
       maximum: max
     },
-    MaxLevel: {
+    'LevelControl:MaxLevel': {
       //O
       type: 'number',
       description: 'MaxLevel as described in Matter spec 1.2',
@@ -79,7 +86,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
       minimum: min,
       maximum: max
     },
-    CurrentFrequency: {
+    'LevelControl:CurrentFrequency': {
       //FQ
       type: 'number',
       description: 'CurrentFrequency as described in Matter spec 1.2',
@@ -88,7 +95,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
       minimum: minF,
       maximum: maxF
     },
-    MinFrequency: {
+    'LevelControl:MinFrequency': {
       //FQ
       type: 'number',
       description: 'MinFrequency as described in Matter spec 1.2',
@@ -97,7 +104,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
       minimum: minF,
       maximum: maxF
     },
-    MaxFrequency: {
+    'LevelControl:MaxFrequency': {
       //FQ
       type: 'number',
       description: 'MinFrequency as described in Matter spec 1.2',
@@ -106,14 +113,14 @@ export const extendedColorLight: WoT.ExposedThingInit = {
       minimum: minF,
       maximum: maxF
     },
-    OnOffTransitionTime: {
+    'LevelControl:OnOffTransitionTime': {
       //O
       type: 'number',
       description: 'OnOffTransitionTime as described in Matter spec 1.2',
       observable: true,
       readOnly: true
     },
-    OnLevel: {
+    'LevelControl:OnLevel': {
       type: 'number',
       description: 'OnOffTransitionTime as described in Matter spec 1.2',
       observable: true,
@@ -121,44 +128,47 @@ export const extendedColorLight: WoT.ExposedThingInit = {
       minimum: min,
       maximum: max
     },
-    OnTransitionTime: {
+    'LevelControl:OnTransitionTime': {
       //O
       type: 'number',
       description: 'OnTransitionTime as described in Matter spec 1.2',
       observable: true,
       readOnly: true
     },
-    OffTransitionTime: {
+    'LevelControl:OffTransitionTime': {
       //O
       type: 'number',
       description: 'OffTransitionTime as described in Matter spec 1.2',
       observable: true,
       readOnly: true
     },
-    DefaultMoveRate: {
+    'LevelControl:DefaultMoveRate': {
       //O
       type: 'number',
       description: 'OffTransitionTime as described in Matter spec 1.2',
       observable: true,
       readOnly: true
     },
-    Options: {
+    'LevelControl:Options': {
       type: 'number', //OptionsBitmap Type -> 0, 1 are defined
       description: 'Options as described in Matter spec 1.2',
       observable: true,
       readOnly: true
     },
-    StartUpCurrentLevel: {
+    'LevelControl:StartUpCurrentLevel': {
       //LT
       type: 'number',
       description: 'StartUpCurrentLevel as described in Matter spec 1.2',
       observable: true,
       readOnly: true
     },
+    /*
 
-    //from 0x0300 Color Control Cluster
+      0x0300 -> Color Control Cluster
+
+    */
     //Color Information Attribute Set
-  CurrentHue: {
+  'ColorControl:CurrentHue': {
     //HS
     type: 'number',
     observable: true,
@@ -166,24 +176,23 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 254
   },
-  CurrentSaturation: {
+  'ColorControl:CurrentSaturation': {
     //HS
     type: 'number',
     observable: true,
-    readOnly: false,
+    readOnly: true,
     minimum: 0,
     maximum: 254
-    },
-  //TODO RemainingTime from two clusters. are they the same?
-  // RemainingTime: {
-  //   //O
-  //   type: 'number',
-  //   observable: true,
-  //   readOnly: true,
-  //   minimum: 0,
-  //   maximum: 65534
-  // },
-  CurrentX: {
+  },
+  'ColorControl:RemainingTime': {
+    //O
+    type: 'number',
+    observable: true,
+    readOnly: true,
+    minimum: 0,
+    maximum: 65534
+  },
+  'ColorControl:CurrentX': {
     //XY
     type: 'number',
     observable: true,
@@ -191,7 +200,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  CurrentY: {
+  'ColorControl:CurrentY': {
     //XY
     type: 'number',
     observable: true,
@@ -199,7 +208,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  DriftCompensation: {
+  'ColorControl:DriftCompensation': {
     //O
     type: 'number', //enum 0-4 defined
     observable: true,
@@ -207,14 +216,14 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 4
   },
-  CompensationText: {
+  'ColorControl:CompensationText': {
     //O
     type: 'string',
     observable: true,
     readOnly: true,
     maximum: 254
   },
-  ColorTemperatureMireds: {
+  'ColorControl:ColorTemperatureMireds': {
     //CT
     type: 'number',
     observable: true,
@@ -222,29 +231,28 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorMode: {
+  'ColorControl:ColorMode': {
     //M
     type: 'number', //enum 0-2
     observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 2
-    },
-  //TODO RemainingTime from two clusters. are they the same?
-  // Options: {
-  //   type: 'number',
-  //   observable: true,
-  //   readOnly: true,
-  //   minimum: 0,
-  //   maximum: 1
-  // },
-  EnhancedCurrentHue: {
+  },
+  'ColorControl:Options': {
+    type: 'number',
+    observable: true,
+    readOnly: true,
+    minimum: 0,
+    maximum: 1
+  },
+  'ColorControl:EnhancedCurrentHue': {
     //EHUE
     type: 'number',
     observable: true,
     readOnly: true
   },
-  EnhancedColorMode: {
+  'ColorControl:EnhancedColorMode': {
     //M
     type: 'number', //enum 0-3
     observable: true,
@@ -252,37 +260,37 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 3
   },
-  ColorLoopActive: {
+  'ColorControl:ColorLoopActive': {
     //CL
     type: 'number',
     observable: true,
     readOnly: true
   },
-  ColorLoopDirection: {
+  'ColorControl:ColorLoopDirection': {
     //CL
     type: 'number',
     observable: true,
     readOnly: true
   },
-  ColorLoopTime: {
+  'ColorControl:ColorLoopTime': {
     //CL
     type: 'number',
     observable: true,
     readOnly: true
   },
-  ColorLoopStartEnhancedHue: {
+  'ColorControl:ColorLoopStartEnhancedHue': {
     //CL
     type: 'number',
     observable: true,
     readOnly: true
   },
-  ColorLoopStoredEnhancedHue: {
+  'ColorControl:ColorLoopStoredEnhancedHue': {
     //CL
     type: 'number',
     observable: true,
     readOnly: true
   },
-  ColorCapabilities: {
+  'ColorControl:ColorCapabilities': {
     //M
     type: 'number',
     observable: true,
@@ -290,7 +298,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorTempPhysicalMinMireds: {
+  'ColorControl:ColorTempPhysicalMinMireds': {
     //CT
     type: 'number',
     observable: true,
@@ -298,7 +306,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorTempPhysicalMaxMireds: {
+  'ColorControl:ColorTempPhysicalMaxMireds': {
     //CT
     type: 'number',
     observable: true,
@@ -306,7 +314,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  CoupleColorTempToLevelMinMireds: {
+  'ColorControl:CoupleColorTempToLevelMinMireds': {
     //CT| ColorTemperatureMireds
     type: 'number',
     observable: true,
@@ -314,7 +322,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     //   minimum: ColorTempPhysicalMinMireds,
     //   maximum: ColorTemperatureMireds
   },
-  StartUpColorTemperatureMireds: {
+  'ColorControl:StartUpColorTemperatureMireds': {
     //CT| ColorTemperatureMireds
     type: 'number',
     observable: true,
@@ -324,7 +332,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
   },
 
   //Defined Primaries Information Attribute Set
-  NumberOfPrimaries: {
+  'ColorControl:NumberOfPrimaries': {
     //M
     type: 'number',
     observable: true,
@@ -332,7 +340,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 6
   },
-  Primary1X: {
+  'ColorControl:Primary1X': {
     //M0
     type: 'number',
     observable: true,
@@ -340,7 +348,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary1Y: {
+  'ColorControl:Primary1Y': {
     //M0
     type: 'number',
     observable: true,
@@ -348,13 +356,13 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary1Intensity: {
+  'ColorControl:Primary1Intensity': {
     //M0
     type: 'number',
     observable: true,
     readOnly: true
   },
-  Primary2X: {
+  'ColorControl:Primary2X': {
     //M1
     type: 'number',
     observable: true,
@@ -362,7 +370,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary2Y: {
+  'ColorControl:Primary2Y': {
     //M1
     type: 'number',
     observable: true,
@@ -370,13 +378,13 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary2Intensity: {
+  'ColorControl:Primary2Intensity': {
     //M1
     type: 'number',
     observable: true,
     readOnly: true
   },
-  Primary3X: {
+  'ColorControl:Primary3X': {
     //M2
     type: 'number',
     observable: true,
@@ -384,7 +392,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary3Y: {
+  'ColorControl:Primary3Y': {
     //M2
     type: 'number',
     observable: true,
@@ -392,14 +400,14 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary3Intensity: {
+  'ColorControl:Primary3Intensity': {
     //M2
     type: 'number',
     observable: true,
     readOnly: true
   },
   //Additional Defined Primaries Information Attribute Set
-  Primary4X: {
+  'ColorControl:Primary4X': {
     //M3
     type: 'number',
     observable: true,
@@ -407,7 +415,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary4Y: {
+  'ColorControl:Primary4Y': {
     //M3
     type: 'number',
     observable: true,
@@ -415,13 +423,13 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary4Intensity: {
+  'ColorControl:Primary4Intensity': {
     //M3
     type: 'number',
     observable: true,
     readOnly: true
   },
-  Primary5X: {
+  'ColorControl:Primary5X': {
     //M4
     type: 'number',
     observable: true,
@@ -429,7 +437,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary5Y: {
+  'ColorControl:Primary5Y': {
     //M4
     type: 'number',
     observable: true,
@@ -437,13 +445,13 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary5Intensity: {
+  'ColorControl:Primary5Intensity': {
     //M4
     type: 'number',
     observable: true,
     readOnly: true
   },
-  Primary6X: {
+  'ColorControl:Primary6X': {
     //M5
     type: 'number',
     observable: true,
@@ -451,7 +459,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary6Y: {
+  'ColorControl:Primary6Y': {
     //M5
     type: 'number',
     observable: true,
@@ -459,7 +467,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  Primary6Intensity: {
+  'ColorControl:Primary6Intensity': {
     //M5
     type: 'number',
     observable: true,
@@ -467,7 +475,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
   },
 
   //Defined Color Points Settings Attribute Set
-  WhitePointX: {
+  'ColorControl:WhitePointX': {
     //O
     type: 'number',
     observable: true,
@@ -475,7 +483,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  WhitePointY: {
+  'ColorControl:WhitePointY': {
     //O
     type: 'number',
     observable: true,
@@ -483,7 +491,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorPointRX: {
+  'ColorControl:ColorPointRX': {
     //O
     type: 'number',
     observable: true,
@@ -491,7 +499,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorPointRY: {
+  'ColorControl:ColorPointRY': {
     //O
     type: 'number',
     observable: true,
@@ -499,13 +507,13 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorPointRIntensity: {
+  'ColorControl:ColorPointRIntensity': {
     //O
     type: 'number',
     observable: true,
     readOnly: true
   },
-  ColorPointGX: {
+  'ColorControl:ColorPointGX': {
     //O
     type: 'number',
     observable: true,
@@ -513,7 +521,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorPointGY: {
+  'ColorControl:ColorPointGY': {
     //O
     type: 'number',
     observable: true,
@@ -521,13 +529,13 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorPointGIntensity: {
+  'ColorControl:ColorPointGIntensity': {
     //O
     type: 'number',
     observable: true,
     readOnly: true
   },
-  ColorPointBX: {
+  'ColorControl:ColorPointBX': {
     //O
     type: 'number',
     observable: true,
@@ -535,7 +543,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorPointBY: {
+  'ColorControl:ColorPointBY': {
     //O
     type: 'number',
     observable: true,
@@ -543,7 +551,7 @@ export const extendedColorLight: WoT.ExposedThingInit = {
     minimum: 0,
     maximum: 65279 //0xFEFF
   },
-  ColorPointBIntensity: {
+  'ColorControl:ColorPointBIntensity': {
     //O
     type: 'number',
     observable: true,
@@ -551,134 +559,144 @@ export const extendedColorLight: WoT.ExposedThingInit = {
   }
   },
   actions: {
-    //from 0x0006 On/Off cluster
-    Off: {
-      synchronous: true
-    },
-    On: {
-      synchronous: true
-    },
-    Toggle: {
-      //LT
-      synchronous: true
-    },
-    OffWithEffect: {
-      //LT
-      synchronous: true
-    },
-    OnWithRecallGlobalScene: {
-      //LT
-      synchronous: true
-    },
-    OnWithTimedOff: {
-      //LT
-      synchronous: true
-    },
+     /*
 
-    //from 0x0008 Level Control Cluster
-    MoveToLevel: {
+      0x0003 -> On/Off
+
+    */
+      'OnOff:Off': {
+        synchronous: true
+      },
+      'OnOff:On': {
+        synchronous: true
+      },
+      'OnOff:Toggle': {
+        //LT
+        synchronous: true
+      },
+      'OnOff:OffWithEffect': {
+        //LT
+        synchronous: true
+      },
+      'OnOff:OnWithRecallGlobalScene': {
+        //LT
+        synchronous: true
+      },
+      'OnOff:OnWithTimedOff': {
+        //LT
+        synchronous: true
+      },
+    /*
+
+      0x0008 -> Level Control
+
+    */
+    'LevelControl:MoveToLevel': {
       synchronous: true
     },
-    Move: {
+    'LevelControl:Move': {
       synchronous: true
     },
-    Step: {
+    'LevelControl:Step': {
       synchronous: true
     },
-    Stop: {
+    'LevelControl:Stop': {
       synchronous: true
     },
-    MoveToLevelWithOnOff: {
+    'LevelControl:MoveToLevelWithOnOff': {
       synchronous: true
     },
-    MoveWithOnOff: {
+    'LevelControl:MoveWithOnOff': {
       synchronous: true
     },
-    StepWithOnOff: {
+    'LevelControl:StepWithOnOff': {
       synchronous: true
     },
-    StopWithOnOff: {
+    'LevelControl:StopWithOnOff': {
       synchronous: true
     },
-    MoveToClosestFrequency: {
+    'LevelControl:MoveToClosestFrequency': {
       //FQ
       synchronous: true
     },
+    /*
 
-    //from 0x0300 Color Control Cluster
-    MoveToHue: {
+      0x0300 -> Color Control Cluster
+
+    */
+    'ColorControl:MoveToHue': {
       //HS
       synchronous: true
     },
-    MoveHue: {
+    'ColorControl:MoveHue': {
       //HS
       synchronous: true
     },
-    StepHue: {
+    'ColorControl:StepHue': {
       //HS
       synchronous: true
     },
-    MoveToSaturation: {
+    'ColorControl:MoveToSaturation': {
       //HS
       synchronous: true
     },
-    MoveSaturation: {
+    'ColorControl:MoveSaturation': {
       //HS
       synchronous: true
     },
-    StepSaturation: {
+    'ColorControl:StepSaturation': {
       //HS
       synchronous: true
     },
-    MoveToHueAndSaturation: {
+    'ColorControl:MoveToHueAndSaturation': {
       //HS
       synchronous: true
     },
-    MoveToColor: {
+    'ColorControl:MoveToColor': {
       //XY
       synchronous: true
     },
-    MoveColor: {
+    'ColorControl:MoveColor': {
       //XY
       synchronous: true
     },
-    StepColor: {
+    'ColorControl:StepColor': {
       //XY
       synchronous: true
     },
-    MoveToColorTemperature: {
+    'ColorControl:MoveToColorTemperature': {
       //CT
       synchronous: true
     },
-    EnhancedMoveToHue: {
+    'ColorControl:EnhancedMoveToHue': {
       //EHUE
       synchronous: true
     },
-    EnhancedMoveHue: {
+    'ColorControl:EnhancedMoveHue': {
       //EHUE
       synchronous: true
     },
-    EnhancedStepHue: {
+    'ColorControl:EnhancedStepHue': {
       //EHUE
       synchronous: true
     },
-    EnhancedMoveToHueAndSaturation: {
+    'ColorControl:EnhancedMoveToHueAndSaturation': {
       //EHUE
       synchronous: true
     },
-    ColorLoopSet: {
+    'ColorControl:ColorLoopSet': {
       //CL
       synchronous: true
     },
-    StopMoveStep: {
+    'ColorControl:StopMoveStep': {
       //HS, XY, CT
       synchronous: true
     },
-    MoveColorTemperature: {
+    'ColorControl:MoveColorTemperature': {
       //CT
       synchronous: true
     },
-    StepColorTemperature: {
+    'ColorControl:StepColorTemperature': {
       //CT
       synchronous: true
     }

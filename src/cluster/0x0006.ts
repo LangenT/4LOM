@@ -3,34 +3,34 @@
 
 //TODO currently not in use
 export const properties0x0006 = {
-  OnOff: {
+  'OnOff:OnOff': {
     type: 'boolean',
     description: 'Status if the device is turned on or not',
     observable: true,
     readOnly: true
   },
-  GlobalSceneControl: {
+  'OnOff:GlobalSceneControl': {
     //LT
     type: 'boolean',
     description: 'GlobalSceneControl as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  OnTime: {
+  'OnOff:OnTime': {
     //LT
     type: 'number',
     description: 'OnTime as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  OffWaitTime: {
+  'OnOff:OffWaitTime': {
     //LT
     type: 'number',
     description: 'OffWaitTime as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  StartUpOnOff: {
+  'OnOff:StartUpOnOff': {
     //LT
     type: 'number', //enum StartUpOnOffEnum -> 0, 1, 2 are defined
     description: 'StartUpOnOff as described in Matter spec 1.2',
@@ -40,25 +40,25 @@ export const properties0x0006 = {
 };
 
 export const actions0x0006 = {
-  Off: {
+  'OnOff:Off': {
     synchronous: true
   },
-  On: {
+  'OnOff:On': {
     synchronous: true
   },
-  Toggle: {
+  'OnOff:Toggle': {
     //LT
     synchronous: true
   },
-  OffWithEffect: {
+  'OnOff:OffWithEffect': {
     //LT
     synchronous: true
   },
-  OnWithRecallGlobalScene: {
+  'OnOff:OnWithRecallGlobalScene': {
     //LT
     synchronous: true
   },
-  OnWithTimedOff: {
+  'OnOff:OnWithTimedOff': {
     //LT
     synchronous: true
   }

@@ -7,7 +7,7 @@ const minF: number = 1;
 const maxF: number = 254;
 
 export const properties0x0006 = {
-  CurrentLevel: {
+  'LevelControl:CurrentLevel': {
     type: 'number',
     description: 'CurrentLevel as described in Matter spec 1.2',
     observable: true,
@@ -15,14 +15,14 @@ export const properties0x0006 = {
     minimum: min,
     maximum: max
   },
-  RemainingTime: {
+  'LevelControl:RemainingTime': {
     //LT
     type: 'number',
     description: 'RemainingTime as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  MinLevel: {
+  'LevelControl:MinLevel': {
     //LT
     type: 'number',
     description: 'MinLevel as described in Matter spec 1.2',
@@ -31,7 +31,7 @@ export const properties0x0006 = {
     minimum: min,
     maximum: max
   },
-  MaxLevel: {
+  'LevelControl:MaxLevel': {
     //O
     type: 'number',
     description: 'MaxLevel as described in Matter spec 1.2',
@@ -40,7 +40,7 @@ export const properties0x0006 = {
     minimum: min,
     maximum: max
   },
-  CurrentFrequency: {
+  'LevelControl:CurrentFrequency': {
     //FQ
     type: 'number',
     description: 'CurrentFrequency as described in Matter spec 1.2',
@@ -49,7 +49,7 @@ export const properties0x0006 = {
     minimum: minF,
     maximum: maxF
   },
-  MinFrequency: {
+  'LevelControl:MinFrequency': {
     //FQ
     type: 'number',
     description: 'MinFrequency as described in Matter spec 1.2',
@@ -58,7 +58,7 @@ export const properties0x0006 = {
     minimum: minF,
     maximum: maxF
   },
-  MaxFrequency: {
+  'LevelControl:MaxFrequency': {
     //FQ
     type: 'number',
     description: 'MinFrequency as described in Matter spec 1.2',
@@ -67,14 +67,14 @@ export const properties0x0006 = {
     minimum: minF,
     maximum: maxF
   },
-  OnOffTransitionTime: {
+  'LevelControl:OnOffTransitionTime': {
     //O
     type: 'number',
     description: 'OnOffTransitionTime as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  OnLevel: {
+  'LevelControl:OnLevel': {
     type: 'number',
     description: 'OnOffTransitionTime as described in Matter spec 1.2',
     observable: true,
@@ -82,34 +82,34 @@ export const properties0x0006 = {
     minimum: min,
     maximum: max
   },
-  OnTransitionTime: {
+  'LevelControl:OnTransitionTime': {
     //O
     type: 'number',
     description: 'OnTransitionTime as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  OffTransitionTime: {
+  'LevelControl:OffTransitionTime': {
     //O
     type: 'number',
     description: 'OffTransitionTime as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  DefaultMoveRate: {
+  'LevelControl:DefaultMoveRate': {
     //O
     type: 'number',
     description: 'OffTransitionTime as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  Options: {
+  'LevelControl:Options': {
     type: 'number', //OptionsBitmap Type -> 0, 1 are defined
     description: 'Options as described in Matter spec 1.2',
     observable: true,
     readOnly: true
   },
-  StartUpCurrentLevel: {
+  'LevelControl:StartUpCurrentLevel': {
     //LT
     type: 'number',
     description: 'StartUpCurrentLevel as described in Matter spec 1.2',
@@ -119,31 +119,31 @@ export const properties0x0006 = {
 };
 
 export const actions0x0006 = {
-  MoveToLevel: {
+  'LevelControl:MoveToLevel': {
     synchronous: true
   },
-  Move: {
+  'LevelControl:Move': {
     synchronous: true
   },
-  Step: {
+  'LevelControl:Step': {
     synchronous: true
   },
-  Stop: {
+  'LevelControl:Stop': {
     synchronous: true
   },
-  MoveToLevelWithOnOff: {
+  'LevelControl:MoveToLevelWithOnOff': {
     synchronous: true
   },
-  MoveWithOnOff: {
+  'LevelControl:MoveWithOnOff': {
     synchronous: true
   },
-  StepWithOnOff: {
+  'LevelControl:StepWithOnOff': {
     synchronous: true
   },
-  StopWithOnOff: {
+  'LevelControl:StopWithOnOff': {
     synchronous: true
   },
-  MoveToClosestFrequency: {
+  'LevelControl:MoveToClosestFrequency': {
     //FQ
     synchronous: true
   }

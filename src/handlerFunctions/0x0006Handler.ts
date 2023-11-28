@@ -8,7 +8,7 @@ export const set0x0006Handler = (
   //
   //read handler
   //
-  smartPlug.setPropertyReadHandler('OnOff', function () {
+  smartPlug.setPropertyReadHandler('OnOff:OnOff', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -17,7 +17,7 @@ export const set0x0006Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('GlobalSceneControl', function () {
+  smartPlug.setPropertyReadHandler('OnOff:GlobalSceneControl', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -26,7 +26,7 @@ export const set0x0006Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('OnTime', function () {
+  smartPlug.setPropertyReadHandler('OnOff:OnTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -35,7 +35,7 @@ export const set0x0006Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('OffWaitTime', function () {
+  smartPlug.setPropertyReadHandler('OnOff:OffWaitTime', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -44,7 +44,7 @@ export const set0x0006Handler = (
     return readRequest(data);
   });
 
-  smartPlug.setPropertyReadHandler('StartUpOnOff', function () {
+  smartPlug.setPropertyReadHandler('OnOff:StartUpOnOff', function () {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -56,7 +56,7 @@ export const set0x0006Handler = (
   //
   //action handler
   //
-  smartPlug.setActionHandler('Off', function (value, options) {
+  smartPlug.setActionHandler('OnOff:Off', function (value, options) {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -66,7 +66,7 @@ export const set0x0006Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('On', function (value, options) {
+  smartPlug.setActionHandler('OnOff:On', function (value, options) {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -76,7 +76,7 @@ export const set0x0006Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('Toggle', function (value, options) {
+  smartPlug.setActionHandler('OnOff:Toggle', function (value, options) {
     let data = JSON.stringify({
       nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
       endpointId: endpoint,
@@ -86,7 +86,7 @@ export const set0x0006Handler = (
     return invokeRequest(data);
   });
 
-  smartPlug.setActionHandler('OffWithEffect', async function (value, options) {
+  smartPlug.setActionHandler('OnOff:OffWithEffect', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -111,7 +111,7 @@ export const set0x0006Handler = (
   });
 
   smartPlug.setActionHandler(
-    'OnWithRecallGlobalScene',
+    'OnOff:OnWithRecallGlobalScene',
     function (value, options) {
       let data = JSON.stringify({
         nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
@@ -123,7 +123,7 @@ export const set0x0006Handler = (
     }
   );
 
-  smartPlug.setActionHandler('OnWithTimedOff', async function (value, options) {
+  smartPlug.setActionHandler('OnOff:OnWithTimedOff', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
