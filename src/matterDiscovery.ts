@@ -112,26 +112,30 @@ const getThingInit = async (
 //get the ExposedThingInit to a given device type number (dec)
 const getDeviceType = (deviceType: number): discoveredEndpointSchema | null => {
   switch (deviceType) {
-    case 266: {//type smartPlug
+    case 266: {
+      //type smartPlug
       const Inst: WoT.ExposedThingInit = { ...smartPlug };
       return { ETI: Inst, deviceType: 266, endpoint: -1 };
     }
-    case 256: {//type on/off light
+    case 256: {
+      //type on/off light
       const Inst: WoT.ExposedThingInit = { ...onOffLight };
       return { ETI: Inst, deviceType: 256, endpoint: -1 };
     }
-    case 257: {//type dimmable light
+    case 257: {
+      //type dimmable light
       const Inst: WoT.ExposedThingInit = { ...dimmableLight };
       return { ETI: Inst, deviceType: 266, endpoint: -1 };
     }
-    case 268: {//type color temperature light
+    case 268: {
+      //type color temperature light
       const Inst: WoT.ExposedThingInit = { ...colorTemperatureLight };
       return { ETI: Inst, deviceType: 268, endpoint: -1 };
     }
     case 269: //type extended color light
       const eclInst: WoT.ExposedThingInit = { ...extendedColorLight };
       return { ETI: eclInst, deviceType: 269, endpoint: -1 };
-    //TODO 
+    //TODO
     default:
       console.log('unknown or not supported device type: ' + deviceType);
       return null;
