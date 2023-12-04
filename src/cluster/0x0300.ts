@@ -1,7 +1,6 @@
 //handler for cluster 0x0300 -> Color Control Cluster
 
-//TODO currently not in use
-export const properties0x0300:{ [key: string]: object } = {
+export const properties0x0300: { [key: string]: object } = {
   //Color Information Attribute Set
   'ColorControl:CurrentHue': {
     //HS
@@ -394,7 +393,7 @@ export const properties0x0300:{ [key: string]: object } = {
   }
 };
 
-export const actions0x0300:{ [key: string]: object } = {
+export const actions0x0300: { [key: string]: object } = {
   'ColorControl:MoveToHue': {
     //HS
     synchronous: true

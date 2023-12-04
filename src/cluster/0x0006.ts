@@ -1,7 +1,6 @@
 //cluster 0x0006 -> On/Off
 //LT -> conformance LT for Lighting
 
-//TODO currently not in use
 export const properties0x0006: { [key: string]: object } = {
   'OnOff:OnOff': {
     type: 'boolean',
