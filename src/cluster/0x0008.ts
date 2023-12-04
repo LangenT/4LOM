@@ -6,7 +6,7 @@ const max: number = 254;
 const minF: number = 1;
 const maxF: number = 254;
 
-export const properties0x0006 = {
+export const properties0x0008:{ [key: string]: object } = {
   'LevelControl:CurrentLevel': {
     type: 'number',
     description: 'CurrentLevel as described in Matter spec 1.2',
@@ -118,7 +118,7 @@ export const properties0x0006 = {
   }
 };
 
-export const actions0x0006 = {
+export const actions0x0008:{ [key: string]: object } = {
   'LevelControl:MoveToLevel': {
     synchronous: true
   },

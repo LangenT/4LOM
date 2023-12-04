@@ -2,7 +2,7 @@
 //LT -> conformance LT for Lighting
 
 //TODO currently not in use
-export const properties0x0006 = {
+export const properties0x0006: { [key: string]: object } = {
   'OnOff:OnOff': {
     type: 'boolean',
     description: 'Status if the device is turned on or not',
@@ -39,7 +39,7 @@ export const properties0x0006 = {
   }
 };
 
-export const actions0x0006 = {
+export const actions0x0006: { [key: string]: object } = {
   'OnOff:Off': {
     synchronous: true
   },
