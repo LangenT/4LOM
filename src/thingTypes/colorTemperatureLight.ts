@@ -8,15 +8,15 @@ export const colorTemperatureLight: WoT.ExposedThingInit = {
     'Color Temperature Light is a lighting device that is capable of ' +
     'being switched on or off, the intensity of its light adjusted, and its color temperature adjusted',
   properties: {
-    ...properties0x0006,//On/Off
-    ...properties0x0008,//Level Control
-    ...properties0x0300//Color Control
+    ...properties0x0006, //On/Off
+    ...properties0x0008, //Level Control
+    ...properties0x0300 //Color Control
   },
   actions: {
-    ...actions0x0006,//On/Off
-    ...actions0x0008,//Level Control
-    ...actions0x0300//Color Control
+    ...actions0x0006, //On/Off
+    ...actions0x0008, //Level Control
+    ...actions0x0300 //Color Control
   }
 };
 
-colorTemperatureLight.properties
+colorTemperatureLight.properties;

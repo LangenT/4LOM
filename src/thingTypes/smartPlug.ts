@@ -6,11 +6,11 @@ export const smartPlug: WoT.ExposedThingInit = {
   title: 'On/Off Plug-in Unit',
   description: '0x010A On/Off Plug-in Unit | Matter',
   properties: {
-    ...properties0x0006,//On/Off
-    ...properties0x0008,//Level Control (Optional)
+    ...properties0x0006, //On/Off
+    ...properties0x0008 //Level Control (Optional)
   },
   actions: {
-    ...actions0x0006,//On/Off
-    ...actions0x0008,//Level Control (Optional)
+    ...actions0x0006, //On/Off
+    ...actions0x0008 //Level Control (Optional)
   }
 };
