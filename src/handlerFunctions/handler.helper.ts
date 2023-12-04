@@ -15,6 +15,19 @@ export const setDeviceHandler = (
       set0x0006Handler(thing, endpoint);
       set0x0008Handler(thing, endpoint);
       break;
+    case 256: {//type on/off light
+      set0x0006Handler(thing, endpoint);
+      set0x0008Handler(thing, endpoint);
+      }
+    case 257: {//type dimmable light
+      set0x0006Handler(thing, endpoint);
+      set0x0008Handler(thing, endpoint);
+      }
+    case 268: {//type color temperature light
+      set0x0006Handler(thing, endpoint);
+      set0x0008Handler(thing, endpoint);
+      set0x0300Handler(thing, endpoint);
+      }
     case 269:
       set0x0006Handler(thing, endpoint);
       set0x0008Handler(thing, endpoint);
