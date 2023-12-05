@@ -104,8 +104,7 @@ export const set0x0006Handler = (
         endpointId: endpoint,
         commandType: 'OnOff::OffWithEffect',
         payload: {
-          effectIdentifier: reqData?.effectIdentifier,
-          effectVariant: reqData?.effectVariant
+          ...reqData
         }
       });
 
@@ -144,9 +143,7 @@ export const set0x0006Handler = (
         endpointId: endpoint,
         commandType: 'OnOff::OnWithTimedOff',
         payload: {
-          onOffControl: reqData?.onOffControl,
-          onTime: reqData?.onTime,
-          offWaitTime: reqData?.offWaitTime
+          ...reqData
         }
       });
 

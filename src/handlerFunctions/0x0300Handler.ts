@@ -674,11 +674,11 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.Hue &&
-        !reqData?.Direction &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.hue &&
+        !reqData?.direction &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -690,11 +690,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::MoveToHue',
         payload: {
-          Hue: reqData?.Hue,
-          Direction: reqData?.Direction,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -712,10 +708,10 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.MoveMode &&
-        !reqData?.Rate &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.moveMode &&
+        !reqData?.rate &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -727,10 +723,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::MoveHue',
         payload: {
-          MoveMode: reqData?.MoveMode,
-          Rate: reqData?.Rate,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -748,11 +741,11 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.StepMode &&
-        !reqData?.StepSize &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.stepMode &&
+        !reqData?.stepSize &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -764,11 +757,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::StepHue',
         payload: {
-          StepMode: reqData?.StepMode,
-          StepSize: reqData?.StepSize,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -777,7 +766,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'MoveToSaturation',
+    'ColorControl:MoveToSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -786,10 +775,10 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.Saturation &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.saturation &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -801,10 +790,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::MoveToSaturation',
         payload: {
-          Saturation: reqData?.Saturation,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -822,10 +808,10 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.MoveMode &&
-        !reqData?.Rate &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.moveMode &&
+        !reqData?.rate &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -837,10 +823,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::MoveSaturation',
         payload: {
-          MoveMode: reqData?.MoveMode,
-          Rate: reqData?.Rate,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -858,11 +841,11 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.StepMode &&
-        !reqData?.StepSize &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.stepMode &&
+        !reqData?.stepSize &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -874,11 +857,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::StepSaturation',
         payload: {
-          StepMode: reqData?.StepMode,
-          StepSize: reqData?.StepMode,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -887,7 +866,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'MoveToHueAndSaturation',
+    'ColorControl:MoveToHueAndSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -896,11 +875,11 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.Hue &&
-        !reqData?.Saturation &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.hue &&
+        !reqData?.saturation &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -912,11 +891,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::MoveToHueAndSaturation',
         payload: {
-          Hue: reqData?.Hue,
-          Saturation: reqData?.Saturation,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -924,7 +899,7 @@ export const set0x0300Handler = (
     }
   );
 
-  exposedThing.setActionHandler('MoveToColor', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:MoveToColor', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -932,11 +907,11 @@ export const set0x0300Handler = (
 
     const reqData = JSON.parse((await value.value())?.toString() || '');
     if (
-      !reqData?.ColorX &&
-      !reqData?.ColorY &&
-      !reqData?.TransitionTime &&
-      !reqData?.OptionsMask &&
-      !reqData?.OptionsOverride
+      !reqData?.colorX &&
+      !reqData?.colorY &&
+      !reqData?.transitionTime &&
+      !reqData?.optionsMask &&
+      !reqData?.optionsOverride
     ) {
       return 'Invalid argument';
     }
@@ -948,18 +923,14 @@ export const set0x0300Handler = (
       endpointId: endpoint,
       commandType: 'ColorControl::MoveToColor',
       payload: {
-        ColorX: reqData?.ColorX,
-        ColorY: reqData?.ColorY,
-        TransitionTime: reqData?.TransitionTime,
-        OptionsMask: reqData?.OptionsMask,
-        OptionsOverride: reqData?.OptionsOverride
+        ...reqData
       }
     });
 
     return invokeRequest(data);
   });
 
-  exposedThing.setActionHandler('MoveColor', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:MoveColor', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -967,10 +938,10 @@ export const set0x0300Handler = (
 
     const reqData = JSON.parse((await value.value())?.toString() || '');
     if (
-      !reqData?.RateX &&
-      !reqData?.RateY &&
-      !reqData?.OptionsMask &&
-      !reqData?.OptionsOverride
+      !reqData?.rateX &&
+      !reqData?.rateY &&
+      !reqData?.optionsMask &&
+      !reqData?.optionsOverride
     ) {
       return 'Invalid argument';
     }
@@ -982,17 +953,14 @@ export const set0x0300Handler = (
       endpointId: endpoint,
       commandType: 'ColorControl::MoveColor',
       payload: {
-        RateX: reqData?.RateX,
-        RateY: reqData?.RateY,
-        OptionsMask: reqData?.OptionsMask,
-        OptionsOverride: reqData?.OptionsOverride
+        ...reqData
       }
     });
 
     return invokeRequest(data);
   });
 
-  exposedThing.setActionHandler('StepColor', async function (value, options) {
+  exposedThing.setActionHandler('ColorControl:StepColor', async function (value, options) {
     const parsedValue = await value.value();
     if (typeof parsedValue !== 'string') {
       return 'Invalid content type';
@@ -1000,11 +968,11 @@ export const set0x0300Handler = (
 
     const reqData = JSON.parse((await value.value())?.toString() || '');
     if (
-      !reqData?.StepX &&
-      !reqData?.StepY &&
-      !reqData?.TransitionTime &&
-      !reqData?.OptionsMask &&
-      !reqData?.OptionsOverride
+      !reqData?.stepX &&
+      !reqData?.stepY &&
+      !reqData?.transitionTime &&
+      !reqData?.optionsMask &&
+      !reqData?.optionsOverride
     ) {
       return 'Invalid argument';
     }
@@ -1016,11 +984,7 @@ export const set0x0300Handler = (
       endpointId: endpoint,
       commandType: 'ColorControl::StepColor',
       payload: {
-        StepX: reqData?.StepX,
-        StepY: reqData?.StepY,
-        TransitionTime: reqData?.TransitionTime,
-        OptionsMask: reqData?.OptionsMask,
-        OptionsOverride: reqData?.OptionsOverride
+        ...reqData
       }
     });
 
@@ -1028,7 +992,7 @@ export const set0x0300Handler = (
   });
 
   exposedThing.setActionHandler(
-    'MoveToColorTemperature',
+    'ColorControl:MoveToColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -1037,10 +1001,10 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.ColorTemperatureMireds &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.colorTemperatureMireds &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -1052,10 +1016,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::MoveToColorTemperature',
         payload: {
-          ColorTemperatureMireds: reqData?.ColorTemperatureMireds,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -1064,7 +1025,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'EnhancedMoveToHue',
+    'ColorControl:EnhancedMoveToHue',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -1073,11 +1034,11 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.EnhancedHue &&
-        !reqData?.Direction &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.enhancedHue &&
+        !reqData?.direction &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -1089,11 +1050,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::EnhancedMoveToHue',
         payload: {
-          EnhancedHue: reqData?.EnhancedHue,
-          Direction: reqData?.Direction,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -1102,7 +1059,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'EnhancedMoveHue',
+    'ColorControl:EnhancedMoveHue',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -1111,10 +1068,10 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.MoveMode &&
-        !reqData?.Rate &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.moveMode &&
+        !reqData?.rate &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -1126,10 +1083,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::EnhancedMoveHue',
         payload: {
-          MoveMode: reqData?.MoveMode,
-          Rate: reqData?.Rate,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -1147,11 +1101,11 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.StepMode &&
-        !reqData?.StepSize &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.stepMode &&
+        !reqData?.stepSize &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -1163,11 +1117,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::EnhancedStepHue',
         payload: {
-          StepMode: reqData?.StepMode,
-          StepSize: reqData?.StepSize,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -1176,7 +1126,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'EnhancedMoveToHueAndSaturation',
+    'ColorControl:EnhancedMoveToHueAndSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -1185,11 +1135,11 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.EnhancedHue &&
-        !reqData?.Saturation &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.enhancedHue &&
+        !reqData?.saturation &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -1201,11 +1151,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::EnhancedMoveToHueAndSaturation',
         payload: {
-          EnhancedHue: reqData?.EnhancedHue,
-          Saturation: reqData?.Saturation,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -1214,7 +1160,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'ColorLoopSet',
+    'ColorControl:ColorLoopSet',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -1223,13 +1169,13 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.UpdateFlags &&
-        !reqData?.Action &&
-        !reqData?.Direction &&
-        !reqData?.Time &&
-        !reqData?.StartHue &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.updateFlags &&
+        !reqData?.action &&
+        !reqData?.direction &&
+        !reqData?.time &&
+        !reqData?.startHue &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -1241,13 +1187,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::ColorLoopSet',
         payload: {
-          UpdateFlags: reqData?.UpdateFlags,
-          Action: reqData?.Action,
-          Direction: reqData?.Direction,
-          Time: reqData?.Time,
-          StartHue: reqData?.StartHue,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -1256,7 +1196,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'StopMoveStep',
+    'ColorControl:StopMoveStep',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -1264,7 +1204,7 @@ export const set0x0300Handler = (
       }
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
-      if (!reqData?.OptionsMask && !reqData?.OptionsOverride) {
+      if (!reqData?.optionsMask && !reqData?.optionsOverride) {
         return 'Invalid argument';
       }
 
@@ -1275,8 +1215,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::StopMoveStep',
         payload: {
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -1285,7 +1224,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'MoveColorTemperature',
+    'ColorControl:MoveColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -1294,12 +1233,12 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.MoveMode &&
-        !reqData?.Rate &&
-        !reqData?.ColorTemperatureMinimumMireds &&
-        !reqData?.ColorTemperatureMaximumMireds &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.moveMode &&
+        !reqData?.rate &&
+        !reqData?.colorTemperatureMinimumMireds &&
+        !reqData?.colorTemperatureMaximumMireds &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -1311,12 +1250,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::MoveColorTemperature',
         payload: {
-          MoveMode: reqData?.MoveMode,
-          Rate: reqData?.Rate,
-          ColorTemperatureMinimumMireds: reqData?.ColorTemperatureMinimumMireds,
-          ColorTemperatureMaximumMireds: reqData?.ColorTemperatureMaximumMireds,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -1325,7 +1259,7 @@ export const set0x0300Handler = (
   );
 
   exposedThing.setActionHandler(
-    'StepColorTemperature',
+    'ColorControl:StepColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
       if (typeof parsedValue !== 'string') {
@@ -1334,13 +1268,13 @@ export const set0x0300Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.StepMode &&
-        !reqData?.StepSize &&
-        !reqData?.TransitionTime &&
-        !reqData?.ColorTemperatureMinimumMireds &&
-        !reqData?.ColorTemperatureMaximumMireds &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.stepMode &&
+        !reqData?.stepSize &&
+        !reqData?.transitionTime &&
+        !reqData?.colorTemperatureMinimumMireds &&
+        !reqData?.colorTemperatureMaximumMireds &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -1352,13 +1286,7 @@ export const set0x0300Handler = (
         endpointId: endpoint,
         commandType: 'ColorControl::StepColorTemperature',
         payload: {
-          StepMode: reqData?.StepMode,
-          StepSize: reqData?.StepSize,
-          TransitionTime: reqData?.TransitionTime,
-          ColorTemperatureMinimumMireds: reqData?.ColorTemperatureMinimumMireds,
-          ColorTemperatureMaximumMireds: reqData?.ColorTemperatureMaximumMireds,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 

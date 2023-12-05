@@ -162,10 +162,10 @@ export const set0x0008Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.Level &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.level &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -175,10 +175,7 @@ export const set0x0008Handler = (
         endpointId: endpoint,
         commandType: 'LevelControl::MoveToLevel',
         payload: {
-          Level: reqData?.Level,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -196,10 +193,10 @@ export const set0x0008Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.MoveMode &&
-        !reqData?.Rate &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.moveMode &&
+        !reqData?.rate &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -209,10 +206,7 @@ export const set0x0008Handler = (
         endpointId: endpoint,
         commandType: 'LevelControl::Move',
         payload: {
-          MoveMode: reqData?.MoveMode,
-          Rate: reqData?.Rate,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -230,11 +224,11 @@ export const set0x0008Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.StepMode &&
-        !reqData?.StepSize &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.stepMode &&
+        !reqData?.stepSize &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -244,11 +238,7 @@ export const set0x0008Handler = (
         endpointId: endpoint,
         commandType: 'LevelControl::Step',
         payload: {
-          StepMode: reqData?.StepMode,
-          StepSize: reqData?.StepMode,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -265,7 +255,7 @@ export const set0x0008Handler = (
       }
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
-      if (!reqData?.OptionsMask && !reqData?.OptionsOverride) {
+      if (!reqData?.optionsMask && !reqData?.optionsOverride) {
         return 'Invalid argument';
       }
 
@@ -274,8 +264,7 @@ export const set0x0008Handler = (
         endpointId: endpoint,
         commandType: 'LevelControl::Stop',
         payload: {
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -293,10 +282,10 @@ export const set0x0008Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.Level &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.level &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -306,10 +295,7 @@ export const set0x0008Handler = (
         endpointId: endpoint,
         commandType: 'LevelControl::MoveToLevelWithOnOff',
         payload: {
-          Level: reqData?.Level,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -327,10 +313,10 @@ export const set0x0008Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.MoveMode &&
-        !reqData?.Rate &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.moveMode &&
+        !reqData?.rate &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -340,10 +326,7 @@ export const set0x0008Handler = (
         endpointId: endpoint,
         commandType: 'LevelControl::MoveWithOnOff',
         payload: {
-          MoveMode: reqData?.MoveMode,
-          Rate: reqData?.Rate,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
@@ -361,11 +344,11 @@ export const set0x0008Handler = (
 
       const reqData = JSON.parse((await value.value())?.toString() || '');
       if (
-        !reqData?.StepMode &&
-        !reqData?.StepSize &&
-        !reqData?.TransitionTime &&
-        !reqData?.OptionsMask &&
-        !reqData?.OptionsOverride
+        !reqData?.stepMode &&
+        !reqData?.stepSize &&
+        !reqData?.transitionTime &&
+        !reqData?.optionsMask &&
+        !reqData?.optionsOverride
       ) {
         return 'Invalid argument';
       }
@@ -375,11 +358,7 @@ export const set0x0008Handler = (
         endpointId: endpoint,
         commandType: 'LevelControl::StepWithOnOff',
         payload: {
-          StepMode: reqData?.StepMode,
-          StepSize: reqData?.StepMode,
-          TransitionTime: reqData?.TransitionTime,
-          OptionsMask: reqData?.OptionsMask,
-          OptionsOverride: reqData?.OptionsOverride
+          ...reqData
         }
       });
 
