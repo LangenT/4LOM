@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "ad3b616f-c88d-42ae-8f93-3749c9226550",
+		"name": "4LOM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29992594"
+	},
+	"item": [
+		{
+			"name": "Demo",
+			"item": [
+				{
+					"name": "demo/getCurrentLevel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/1008-269/properties/LevelControl:CurrentLevel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"1008-269",
+								"properties",
+								"LevelControl:CurrentLevel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "demo/MoveToLevel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"level\": 75,\n    \"transitionTime\": 1,\n    \"optionsMask\": 0,\n    \"optionsOverride\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/1008-269/actions/LevelControl:MoveToLevel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"1008-269",
+								"actions",
+								"LevelControl:MoveToLevel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "demo/MoveToColor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"colorX\": 33000,\n    \"colorY\": 17000,\n    \"transitionTime\": 0,\n    \"optionsMask\": 0,\n    \"optionsOverride\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/1008-269/actions/ColorControl:MoveToColor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"1008-269",
+								"actions",
+								"ColorControl:MoveToColor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "demo/makeItCold",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"colorTemperatureMireds\": 1000,\n    \"transitionTime\": 0,\n    \"optionsMask\": 0,\n    \"optionsOverride\": 0\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/1008-269/actions/ColorControl:MoveToColorTemperature",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"1008-269",
+								"actions",
+								"ColorControl:MoveToColorTemperature"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "demo/toggle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/1008-269/actions/OnOff:Toggle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"1008-269",
+								"actions",
+								"OnOff:Toggle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "demo/getThingDescription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/1008-269",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"1008-269"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8081/1019/properties/status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/1008-269/properties/CurrentLevel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"1008-269",
+						"properties",
+						"CurrentLevel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/1019/actions/toggle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/1044-266/actions/toggle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"1044-266",
+						"actions",
+						"toggle"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
