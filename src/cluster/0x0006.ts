@@ -5,35 +5,30 @@ export const properties0x0006: { [key: string]: object } = {
   'OnOff:OnOff': {
     type: 'boolean',
     description: 'Status if the device is turned on or not',
-    observable: true,
     readOnly: true
   },
   'OnOff:GlobalSceneControl': {
     //LT
     type: 'boolean',
     description: 'GlobalSceneControl as described in Matter spec 1.2',
-    observable: true,
     readOnly: true
   },
   'OnOff:OnTime': {
     //LT
     type: 'number',
     description: 'OnTime as described in Matter spec 1.2',
-    observable: true,
     readOnly: true
   },
   'OnOff:OffWaitTime': {
     //LT
     type: 'number',
     description: 'OffWaitTime as described in Matter spec 1.2',
-    observable: true,
     readOnly: true
   },
   'OnOff:StartUpOnOff': {
     //LT
     type: 'number', //enum StartUpOnOffEnum -> 0, 1, 2 are defined
     description: 'StartUpOnOff as described in Matter spec 1.2',
-    observable: true,
     readOnly: true
   }
 };

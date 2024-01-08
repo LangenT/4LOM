@@ -5,7 +5,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:CurrentHue': {
     //HS
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 254
@@ -13,7 +12,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:CurrentSaturation': {
     //HS
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 254
@@ -21,7 +19,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:RemainingTime': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65534
@@ -29,7 +26,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:CurrentX': {
     //XY
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -37,7 +33,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:CurrentY': {
     //XY
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -53,14 +48,12 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:CompensationText': {
     //O
     type: 'string',
-    observable: true,
     readOnly: true,
     maximum: 254
   },
   'ColorControl:ColorTemperatureMireds': {
     //CT
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -75,7 +68,6 @@ export const properties0x0300: { [key: string]: object } = {
   },
   'ColorControl:Options': {
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 1
@@ -83,7 +75,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:EnhancedCurrentHue': {
     //EHUE
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:EnhancedColorMode': {
@@ -97,37 +88,31 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorLoopActive': {
     //CL
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:ColorLoopDirection': {
     //CL
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:ColorLoopTime': {
     //CL
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:ColorLoopStartEnhancedHue': {
     //CL
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:ColorLoopStoredEnhancedHue': {
     //CL
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:ColorCapabilities': {
     //M
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -135,7 +120,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorTempPhysicalMinMireds': {
     //CT
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -143,7 +127,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorTempPhysicalMaxMireds': {
     //CT
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -151,7 +134,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:CoupleColorTempToLevelMinMireds': {
     //CT| ColorTemperatureMireds
     type: 'number',
-    observable: true,
     readOnly: true
     //   minimum: ColorTempPhysicalMinMireds,
     //   maximum: ColorTemperatureMireds
@@ -159,7 +141,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:StartUpColorTemperatureMireds': {
     //CT| ColorTemperatureMireds
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -169,7 +150,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:NumberOfPrimaries': {
     //M
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 6
@@ -177,7 +157,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary1X': {
     //M0
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -185,7 +164,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary1Y': {
     //M0
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -193,13 +171,11 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary1Intensity': {
     //M0
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:Primary2X': {
     //M1
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -207,7 +183,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary2Y': {
     //M1
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -215,13 +190,11 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary2Intensity': {
     //M1
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:Primary3X': {
     //M2
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -229,7 +202,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary3Y': {
     //M2
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -237,14 +209,12 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary3Intensity': {
     //M2
     type: 'number',
-    observable: true,
     readOnly: true
   },
   //Additional Defined Primaries Information Attribute Set
   'ColorControl:Primary4X': {
     //M3
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -252,7 +222,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary4Y': {
     //M3
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -260,13 +229,11 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary4Intensity': {
     //M3
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:Primary5X': {
     //M4
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -274,7 +241,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary5Y': {
     //M4
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -282,13 +248,11 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary5Intensity': {
     //M4
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:Primary6X': {
     //M5
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -296,7 +260,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary6Y': {
     //M5
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -304,7 +267,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:Primary6Intensity': {
     //M5
     type: 'number',
-    observable: true,
     readOnly: true
   },
 
@@ -312,7 +274,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:WhitePointX': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -320,7 +281,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:WhitePointY': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -328,7 +288,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorPointRX': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -336,7 +295,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorPointRY': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -344,13 +302,11 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorPointRIntensity': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:ColorPointGX': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -358,7 +314,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorPointGY': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -366,13 +321,11 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorPointGIntensity': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true
   },
   'ColorControl:ColorPointBX': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -380,7 +333,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorPointBY': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true,
     minimum: 0,
     maximum: 65279 //0xFEFF
@@ -388,7 +340,6 @@ export const properties0x0300: { [key: string]: object } = {
   'ColorControl:ColorPointBIntensity': {
     //O
     type: 'number',
-    observable: true,
     readOnly: true
   }
 };

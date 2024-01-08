@@ -8,8 +8,7 @@ const maxF: number = 254;
 export const properties0x0008: { [key: string]: object } = {
   'LevelControl:CurrentLevel': {
     type: 'number',
-    description: 'CurrentLevel as described in Matter spec 1.2',
-    observable: true,
+    description: 'CurrentLevel as described in Matter spec 1.2', 
     readOnly: true,
     minimum: min,
     maximum: max
@@ -17,15 +16,13 @@ export const properties0x0008: { [key: string]: object } = {
   'LevelControl:RemainingTime': {
     //LT
     type: 'number',
-    description: 'RemainingTime as described in Matter spec 1.2',
-    observable: true,
+    description: 'RemainingTime as described in Matter spec 1.2', 
     readOnly: true
   },
   'LevelControl:MinLevel': {
     //LT
     type: 'number',
-    description: 'MinLevel as described in Matter spec 1.2',
-    observable: true,
+    description: 'MinLevel as described in Matter spec 1.2',  
     readOnly: true,
     minimum: min,
     maximum: max
@@ -33,8 +30,7 @@ export const properties0x0008: { [key: string]: object } = {
   'LevelControl:MaxLevel': {
     //O
     type: 'number',
-    description: 'MaxLevel as described in Matter spec 1.2',
-    observable: true,
+    description: 'MaxLevel as described in Matter spec 1.2',   
     readOnly: true,
     minimum: min,
     maximum: max
@@ -42,8 +38,7 @@ export const properties0x0008: { [key: string]: object } = {
   'LevelControl:CurrentFrequency': {
     //FQ
     type: 'number',
-    description: 'CurrentFrequency as described in Matter spec 1.2',
-    observable: true,
+    description: 'CurrentFrequency as described in Matter spec 1.2',   
     readOnly: true,
     minimum: minF,
     maximum: maxF
@@ -51,8 +46,7 @@ export const properties0x0008: { [key: string]: object } = {
   'LevelControl:MinFrequency': {
     //FQ
     type: 'number',
-    description: 'MinFrequency as described in Matter spec 1.2',
-    observable: true,
+    description: 'MinFrequency as described in Matter spec 1.2',   
     readOnly: true,
     minimum: minF,
     maximum: maxF
@@ -60,8 +54,7 @@ export const properties0x0008: { [key: string]: object } = {
   'LevelControl:MaxFrequency': {
     //FQ
     type: 'number',
-    description: 'MinFrequency as described in Matter spec 1.2',
-    observable: true,
+    description: 'MinFrequency as described in Matter spec 1.2',   
     readOnly: true,
     minimum: minF,
     maximum: maxF
@@ -69,14 +62,12 @@ export const properties0x0008: { [key: string]: object } = {
   'LevelControl:OnOffTransitionTime': {
     //O
     type: 'number',
-    description: 'OnOffTransitionTime as described in Matter spec 1.2',
-    observable: true,
+    description: 'OnOffTransitionTime as described in Matter spec 1.2',   
     readOnly: true
   },
   'LevelControl:OnLevel': {
     type: 'number',
-    description: 'OnOffTransitionTime as described in Matter spec 1.2',
-    observable: true,
+    description: 'OnOffTransitionTime as described in Matter spec 1.2',   
     readOnly: true,
     minimum: min,
     maximum: max
@@ -84,35 +75,30 @@ export const properties0x0008: { [key: string]: object } = {
   'LevelControl:OnTransitionTime': {
     //O
     type: 'number',
-    description: 'OnTransitionTime as described in Matter spec 1.2',
-    observable: true,
+    description: 'OnTransitionTime as described in Matter spec 1.2',    
     readOnly: true
   },
   'LevelControl:OffTransitionTime': {
     //O
     type: 'number',
-    description: 'OffTransitionTime as described in Matter spec 1.2',
-    observable: true,
+    description: 'OffTransitionTime as described in Matter spec 1.2', 
     readOnly: true
   },
   'LevelControl:DefaultMoveRate': {
     //O
     type: 'number',
-    description: 'OffTransitionTime as described in Matter spec 1.2',
-    observable: true,
+    description: 'OffTransitionTime as described in Matter spec 1.2',  
     readOnly: true
   },
   'LevelControl:Options': {
     type: 'number', //OptionsBitmap Type -> 0, 1 are defined
-    description: 'Options as described in Matter spec 1.2',
-    observable: true,
+    description: 'Options as described in Matter spec 1.2',   
     readOnly: true
   },
   'LevelControl:StartUpCurrentLevel': {
     //LT
     type: 'number',
-    description: 'StartUpCurrentLevel as described in Matter spec 1.2',
-    observable: true,
+    description: 'StartUpCurrentLevel as described in Matter spec 1.2',    
     readOnly: true
   }
 };
