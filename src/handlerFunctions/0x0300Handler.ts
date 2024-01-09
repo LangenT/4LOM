@@ -668,11 +668,12 @@ export const set0x0300Handler = (
     'ColorControl:MoveToHue',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.hue &&
         !reqData?.direction &&
@@ -702,11 +703,12 @@ export const set0x0300Handler = (
     'ColorControl:MoveHue',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.moveMode &&
         !reqData?.rate &&
@@ -735,11 +737,12 @@ export const set0x0300Handler = (
     'ColorControl:StepHue',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.stepMode &&
         !reqData?.stepSize &&
@@ -769,11 +772,12 @@ export const set0x0300Handler = (
     'ColorControl:MoveToSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.saturation &&
         !reqData?.transitionTime &&
@@ -802,11 +806,12 @@ export const set0x0300Handler = (
     'ColorControl:MoveSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.moveMode &&
         !reqData?.rate &&
@@ -835,11 +840,12 @@ export const set0x0300Handler = (
     'ColorControl:StepSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.stepMode &&
         !reqData?.stepSize &&
@@ -869,11 +875,12 @@ export const set0x0300Handler = (
     'ColorControl:MoveToHueAndSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.hue &&
         !reqData?.saturation &&
@@ -901,11 +908,12 @@ export const set0x0300Handler = (
 
   exposedThing.setActionHandler('ColorControl:MoveToColor', async function (value, options) {
     const parsedValue = await value.value();
-    if (typeof parsedValue !== 'string') {
+    if (typeof parsedValue !== 'object') {
       return 'Invalid content type';
     }
 
-    const reqData = JSON.parse((await value.value())?.toString() || '');
+    //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
     if (
       !reqData?.colorX &&
       !reqData?.colorY &&
@@ -932,11 +940,12 @@ export const set0x0300Handler = (
 
   exposedThing.setActionHandler('ColorControl:MoveColor', async function (value, options) {
     const parsedValue = await value.value();
-    if (typeof parsedValue !== 'string') {
+    if (typeof parsedValue !== 'object') {
       return 'Invalid content type';
     }
 
-    const reqData = JSON.parse((await value.value())?.toString() || '');
+    //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
     if (
       !reqData?.rateX &&
       !reqData?.rateY &&
@@ -962,11 +971,12 @@ export const set0x0300Handler = (
 
   exposedThing.setActionHandler('ColorControl:StepColor', async function (value, options) {
     const parsedValue = await value.value();
-    if (typeof parsedValue !== 'string') {
+    if (typeof parsedValue !== 'object') {
       return 'Invalid content type';
     }
 
-    const reqData = JSON.parse((await value.value())?.toString() || '');
+    //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
     if (
       !reqData?.stepX &&
       !reqData?.stepY &&
@@ -995,11 +1005,12 @@ export const set0x0300Handler = (
     'ColorControl:MoveToColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.colorTemperatureMireds &&
         !reqData?.transitionTime &&
@@ -1028,11 +1039,12 @@ export const set0x0300Handler = (
     'ColorControl:EnhancedMoveToHue',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.enhancedHue &&
         !reqData?.direction &&
@@ -1062,11 +1074,12 @@ export const set0x0300Handler = (
     'ColorControl:EnhancedMoveHue',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.moveMode &&
         !reqData?.rate &&
@@ -1095,11 +1108,12 @@ export const set0x0300Handler = (
     'ColorControl:EnhancedStepHue',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.stepMode &&
         !reqData?.stepSize &&
@@ -1129,11 +1143,12 @@ export const set0x0300Handler = (
     'ColorControl:EnhancedMoveToHueAndSaturation',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.enhancedHue &&
         !reqData?.saturation &&
@@ -1163,11 +1178,12 @@ export const set0x0300Handler = (
     'ColorControl:ColorLoopSet',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.updateFlags &&
         !reqData?.action &&
@@ -1199,11 +1215,12 @@ export const set0x0300Handler = (
     'ColorControl:StopMoveStep',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (!reqData?.optionsMask && !reqData?.optionsOverride) {
         return 'Invalid argument';
       }
@@ -1227,11 +1244,12 @@ export const set0x0300Handler = (
     'ColorControl:MoveColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.moveMode &&
         !reqData?.rate &&
@@ -1262,11 +1280,12 @@ export const set0x0300Handler = (
     'ColorControl:StepColorTemperature',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.stepMode &&
         !reqData?.stepSize &&

@@ -90,11 +90,12 @@ export const set0x0006Handler = (
     'OnOff:OffWithEffect',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') { //check if type is object
         return 'Invalid content type';
       }
-
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      //parse to sting and then to json to know object structure
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (!reqData?.effectIdentifier && !reqData?.effectVariant) {
         return 'Invalid argument';
       }
@@ -129,11 +130,12 @@ export const set0x0006Handler = (
     'OnOff:OnWithTimedOff',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (!reqData?.onOffControl && !reqData?.onTime && !reqData?.offWaitTime) {
         return 'Invalid argument';
       }

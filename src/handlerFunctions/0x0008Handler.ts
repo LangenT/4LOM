@@ -156,11 +156,12 @@ export const set0x0008Handler = (
     'LevelControl:MoveToLevel',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.level &&
         !reqData?.transitionTime &&
@@ -187,11 +188,12 @@ export const set0x0008Handler = (
     'LevelControl:Move',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.moveMode &&
         !reqData?.rate &&
@@ -218,11 +220,12 @@ export const set0x0008Handler = (
     'LevelControl:Step',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.stepMode &&
         !reqData?.stepSize &&
@@ -250,11 +253,12 @@ export const set0x0008Handler = (
     'LevelControl:Stop',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (!reqData?.optionsMask && !reqData?.optionsOverride) {
         return 'Invalid argument';
       }
@@ -276,11 +280,12 @@ export const set0x0008Handler = (
     'LevelControl:MoveToLevelWithOnOff',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.level &&
         !reqData?.transitionTime &&
@@ -307,11 +312,12 @@ export const set0x0008Handler = (
     'LevelControl:MoveWithOnOff',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.moveMode &&
         !reqData?.rate &&
@@ -338,11 +344,12 @@ export const set0x0008Handler = (
     'LevelControl:StepWithOnOff',
     async function (value, options) {
       const parsedValue = await value.value();
-      if (typeof parsedValue !== 'string') {
+      if (typeof parsedValue !== 'object') {
         return 'Invalid content type';
       }
 
-      const reqData = JSON.parse((await value.value())?.toString() || '');
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
       if (
         !reqData?.stepMode &&
         !reqData?.stepSize &&
@@ -357,6 +364,60 @@ export const set0x0008Handler = (
         nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
         endpointId: endpoint,
         commandType: 'LevelControl::StepWithOnOff',
+        payload: {
+          ...reqData
+        }
+      });
+
+      return invokeRequest(data);
+    }
+  );
+
+  smartPlug.setActionHandler(
+    'LevelControl:StopWithOnOff',
+    async function (value, options) {
+      const parsedValue = await value.value();
+      if (typeof parsedValue !== 'object') {
+        return 'Invalid content type';
+      }
+
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
+      if (!reqData?.optionsMask && !reqData?.optionsOverride) {
+        return 'Invalid argument';
+      }
+
+      let data = JSON.stringify({
+        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        endpointId: endpoint,
+        commandType: 'LevelControl::StopWithOnOff',
+        payload: {
+          ...reqData
+        }
+      });
+
+      return invokeRequest(data);
+    }
+  );
+
+  smartPlug.setActionHandler(
+    'LevelControl:MoveToClosestFrequency',
+    async function (value, options) {
+      const parsedValue = await value.value();
+      if (typeof parsedValue !== 'object') {
+        return 'Invalid content type';
+      }
+
+      //const reqData = JSON.parse((await value.value())?.toString() || '');
+      const reqData = JSON.parse(JSON.stringify(parsedValue));
+      if (!reqData?.frequency) { //this check is normally not needed because library takes care
+        return 'Invalid argument';
+      }
+
+      let data = JSON.stringify({
+        nodeId: parseInt(smartPlug.getThingDescription().title.split('-')?.[0]),
+        endpointId: endpoint,
+        commandType: 'LevelControl::MoveToClosestFrequency',
         payload: {
           ...reqData
         }

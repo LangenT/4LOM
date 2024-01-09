@@ -46,7 +46,23 @@ export const actions0x0006: { [key: string]: object } = {
   },
   'OnOff:OffWithEffect': {
     //LT
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        effectIdentifier: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        },
+        effectVariant: {
+          type: "integer",
+          minimum: 0,
+          maximum: 2
+        }
+      },
+      required: ["effectIdentifier","effectVariant"]
+    }
   },
   'OnOff:OnWithRecallGlobalScene': {
     //LT
@@ -54,6 +70,27 @@ export const actions0x0006: { [key: string]: object } = {
   },
   'OnOff:OnWithTimedOff': {
     //LT
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        onOffControl: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        },
+        onTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        offWaitTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        }
+      },
+      required: ["effectIdentifier","effectVariant"]
+    }
   }
 };

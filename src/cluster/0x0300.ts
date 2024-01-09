@@ -347,78 +347,571 @@ export const properties0x0300: { [key: string]: object } = {
 export const actions0x0300: { [key: string]: object } = {
   'ColorControl:MoveToHue': {
     //HS
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        hue: {
+          type: "integer",
+          minimum: 0,
+          maximum: 254
+        },
+        direction: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["hue", "direction", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:MoveHue': {
     //HS
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        moveMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        rate: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["moveMode", "rate", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:StepHue': {
     //HS
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        stepMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        stepSize: {
+          type: "integer"
+        },
+        transitionTime: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["stepMode", "moveMode","transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:MoveToSaturation': {
     //HS
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        saturation: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        },
+        transitionTime: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["saturation", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:MoveSaturation': {
     //HS
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        moveMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        rate: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["moveMode", "rate", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:StepSaturation': {
     //HS
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        stepMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        stepSize: {
+          type: "integer"
+        },
+        transitionTime: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["stepMode", "moveMode", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:MoveToHueAndSaturation': {
     //HS
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        hue: {
+          type: "integer",
+          minimum: 0,
+          maximum: 254
+        },
+        saturation: {
+          type: "integer",
+          minimum: 0,
+          maximum: 254
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["hue", "saturation", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:MoveToColor': {
     //XY
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        colorX: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65279
+        },
+        colorY: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65279
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["colorX", "colorY", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:MoveColor': {
     //XY
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        rateX: {
+          type: "integer"
+        },
+        rateY: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["rateX", "rateY", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:StepColor': {
     //XY
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        stepX: {
+          type: "integer"
+        },
+        stepY: {
+          type: "integer"
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["stepX", "stepY", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:MoveToColorTemperature': {
     //CT
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        colorTemperatureMireds: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65279
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["colorTemperatureMireds", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:EnhancedMoveToHue': {
     //EHUE
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        enhancedHue: {
+          type: "integer"
+        },
+        direction: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["enhancedHue", "direction", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:EnhancedMoveHue': {
     //EHUE
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        moveMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        rate: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["moveMode", "rate", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:EnhancedStepHue': {
     //EHUE
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        stepMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        stepSize: {
+          type: "integer"
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["stepMode", "moveMode","transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:EnhancedMoveToHueAndSaturation': {
     //EHUE
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        enhancedHue: {
+          type: "integer"
+        },
+        saturation: {
+          type: "integer",
+          minimum: 0,
+          maximum: 254
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["enhancedHue", "saturation", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:ColorLoopSet': {
     //CL
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        updateFlags: {
+          type: "integer",
+          minimum: 0,
+          maximum: 7
+        },
+        action: {
+          type: "integer",
+          minimum: 0,
+          maximum: 2
+        },
+        direction: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        },
+        time: {
+          type: "integer"
+        },
+        startHue: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["updateFlags", "action", "direction", "time", "startHue", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:StopMoveStep': {
     //HS, XY, CT
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:MoveColorTemperature': {
     //CT
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        moveMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        rate: {
+          type: "integer"
+        },
+        colorTemperatureMinimumMireds: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65279
+        },
+        colorTemperatureMaximumMireds: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65279
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["moveMode", "rate", "colorTemperatureMinimumMireds", "colorTemperatureMaximumMireds", "optionsMask", "optionsOverride"]
+    }
   },
   'ColorControl:StepColorTemperature': {
     //CT
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        stepMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 3
+        },
+        stepSize: {
+          type: "integer"
+        },
+        transitionTime: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65534
+        },
+        colorTemperatureMinimumMireds: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65279
+        },
+        colorTemperatureMaximumMireds: {
+          type: "integer",
+          minimum: 0,
+          maximum: 65279
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["stepMode", "stepSize", "transitionTime", "colorTemperatureMinimumMireds", "colorTemperatureMaximumMireds", "optionsMask", "optionsOverride"]
+    }
   }
 };

@@ -105,31 +105,206 @@ export const properties0x0008: { [key: string]: object } = {
 
 export const actions0x0008: { [key: string]: object } = {
   'LevelControl:MoveToLevel': {
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        level: {
+          type: "integer",
+          minimum: 0,
+          maximum: 254
+        },
+        transitionTime: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["level","transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'LevelControl:Move': {
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        moveMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        },
+        rate: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["moveMode", "rate", "optionsMask", "optionsOverride"]
+    }
   },
   'LevelControl:Step': {
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        stepMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        },
+        stepSize: {
+          type: "integer"
+        },
+        transitionTime: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["stepMode", "moveMode","transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'LevelControl:Stop': {
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["optionsMask", "optionsOverride"]
+    }
   },
   'LevelControl:MoveToLevelWithOnOff': {
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        level: {
+          type: "integer",
+          minimum: 0,
+          maximum: 254
+        },
+        transitionTime: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["level", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'LevelControl:MoveWithOnOff': {
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        moveMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        },
+        rate: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["moveMode","rate", "optionsMask", "optionsOverride"]
+    }
   },
   'LevelControl:StepWithOnOff': {
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        stepMode: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        },
+        stepSize: {
+          type: "integer"
+        },
+        transitionTime: {
+          type: "integer"
+        },
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["stepMode", "moveMode", "transitionTime", "optionsMask", "optionsOverride"]
+    }
   },
   'LevelControl:StopWithOnOff': {
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        optionsMask: {
+          type: "integer"
+        },
+        optionsOverride: {
+          type: "integer",
+          minimum: 0,
+          maximum: 1
+        }
+      },
+      required: ["optionsMask", "optionsOverride"]
+    }
   },
   'LevelControl:MoveToClosestFrequency': {
     //FQ
-    synchronous: true
+    synchronous: true,
+    input: {
+      type: "object",
+      properties: {
+        frequency: {
+          type: "integer"
+        }
+      },
+      required: ["frequency"]
+    }
   }
 };
